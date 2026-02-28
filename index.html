@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C2026 | İmtahana Hazırlıq</title>
-    <!-- Müasir Şrift -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
-        /* --- DİZAYN (CSS) --- */
         :root {
-            --primary: #4F46E5;       /* Əsas rəng */
+            --primary: #4F46E5;
             --primary-hover: #4338ca;
+            --secondary: #10B981;
             --bg-body: #F3F4F6;
             --bg-card: #FFFFFF;
             --text-dark: #1F2937;
@@ -19,171 +17,135 @@
             --radius: 16px;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), #818CF8);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-        }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--primary), #818CF8); color: white; padding: 3rem 1rem; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; box-shadow: var(--shadow); margin-bottom: 2rem; }
         header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        header p { opacity: 0.9; font-size: 1.1rem; }
-
-        /* Naviqasiya */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: -1rem auto 2rem;
+        
+        .search-container {
+            max-width: 800px;
+            margin: -1.5rem auto 2rem;
             padding: 0 1rem;
             position: relative;
-            z-index: 10;
-        }
-        .nav-btn {
-            background: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: var(--text-gray);
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-        .nav-btn:hover { transform: translateY(-3px); color: var(--primary); }
-        .nav-btn.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
-        }
-
-        /* Konteyner */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
-            min-height: 60vh;
-        }
-
-        /* Kateqoriya Başlıqları */
-        .category-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 30px 0 15px;
-            padding-left: 15px;
-            border-left: 5px solid var(--primary);
-            color: var(--text-dark);
+            z-index: 20;
             display: flex;
-            align-items: center;
             gap: 10px;
         }
-
-        /* Kartlar Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+        .search-box { flex: 1; position: relative; }
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: inherit;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            outline: none;
+            transition: all 0.3s;
         }
-
-        /* Kart Dizaynı */
-        .card {
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .search-box input:focus { box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3); }
+        .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.2rem; opacity: 0.5; }
+        .random-btn {
+            background: linear-gradient(135deg, var(--secondary), #34D399);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            border: 1px solid #E5E7EB;
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s;
+            font-family: inherit;
+            white-space: nowrap;
             display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
+            align-items: center;
+            gap: 8px;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--primary);
-        }
+        .random-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 20px -3px rgba(16, 185, 129, 0.4); }
+        .random-btn:active { transform: scale(0.95); }
 
-        /* Tip Etiketləri (Image, Video və s.) */
-        .badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
+        nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 0 auto 2rem; padding: 0 1rem; position: relative; z-index: 10; }
+        .nav-btn { background: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: 600; color: var(--text-gray); cursor: pointer; box-shadow: var(--shadow); transition: all 0.3s ease; font-family: inherit; }
+        .nav-btn:hover { transform: translateY(-3px); color: var(--primary); }
+        .nav-btn.active { background: var(--primary); color: white; box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; min-height: 60vh; }
+        .category-title { font-size: 1.4rem; font-weight: 700; margin: 30px 0 15px; padding-left: 15px; border-left: 5px solid var(--primary); color: var(--text-dark); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--bg-card); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.3s ease; cursor: pointer; border: 1px solid #E5E7EB; display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .badge { position: absolute; top: 15px; right: 15px; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; }
         .badge.image { background: #DBEAFE; color: #1E40AF; }
         .badge.video { background: #FEE2E2; color: #991B1B; }
         .badge.pdf { background: #DCFCE7; color: #166534; }
         .badge.link { background: #F3F4F6; color: #374151; }
-
         .card h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text-dark); padding-right: 40px; }
         .card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
-        
-        .card-action {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .card-action { font-size: 0.9rem; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 5px; }
         .card:hover .card-action { gap: 10px; transition: gap 0.3s; }
-
-        /* Modal (Şəkil üçün) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
         .modal.active { display: flex; animation: fadeIn 0.3s; }
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .modal-close {
-            position: absolute;
-            top: 20px; right: 30px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
+        .modal img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        .modal-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; font-weight: bold; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* Loading & Error */
         .status { text-align: center; padding: 40px; color: var(--text-gray); font-size: 1.1rem; }
-        .error { color: #DC2626; background: #FEE2E2; padding: 15px; border-radius: 10px; text-align: center; }
-
+        .error { color: #DC2626; background: #FEE2E2; padding: 20px; border-radius: 10px; text-align: center; border: 1px solid #FECACA; }
+        .no-results { text-align: center; padding: 40px; color: var(--text-gray); }
+        .no-results-icon { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
+        .search-info { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; }
+        .clear-search { background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+        .clear-search:hover { text-decoration: underline; }
+        
+        /* Ziyarətçi Sayacı Stili */
+        .visitor-counter {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 600px;
+            box-shadow: var(--shadow);
+            border: 1px solid #E5E7EB;
+        }
+        .visitor-counter h3 {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .counter-item {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            padding: 15px 10px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .counter-item:hover { transform: translateY(-3px); }
+        .counter-item.daily { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+        .counter-item.weekly { background: linear-gradient(135deg, #DCFCE7, #BBF7D0); }
+        .counter-item.monthly { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+        .counter-item.total { background: linear-gradient(135deg, #4F46E5, #818CF8); color: white; }
+        .counter-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .counter-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+        .counter-item.total .counter-label { opacity: 0.9; }
+        
         footer {
             text-align: center;
             padding: 2rem;
@@ -193,24 +155,59 @@
             margin-top: auto;
             border-top: 1px solid #E5E7EB;
         }
+        
+        @media (max-width: 600px) {
+            .search-container { flex-direction: column; }
+            .random-btn { justify-content: center; }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <h1>C2026 Hazırlıq Portalı</h1>
         <p>Bütün resurslar bir yerdə</p>
     </header>
 
-    <nav id="navbar">
-        <!-- Düymələr JS ilə yaradılacaq -->
-    </nav>
+    <div class="search-container">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Mövzu, kateqoriya və ya açar söz axtar..." autocomplete="off">
+        </div>
+        <button class="random-btn" onclick="showRandomTopic()">
+            <span>🎲</span>
+            <span>Təsadüfi Mövzu</span>
+        </button>
+    </div>
 
+    <nav id="navbar"></nav>
     <div class="container" id="content-area">
         <div class="status">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <!-- Şəkil Modalı -->
+    <!-- Ziyarətçi Sayacı -->
+    <div class="visitor-counter">
+        <h3>👁️ Ziyarətçi Statistikası</h3>
+        <div class="counter-grid">
+            <div class="counter-item daily">
+                <span class="counter-value" id="count-daily">-</span>
+                <span class="counter-label">Bu Gün</span>
+            </div>
+            <div class="counter-item weekly">
+                <span class="counter-value" id="count-weekly">-</span>
+                <span class="counter-label">Bu Həftə</span>
+            </div>
+            <div class="counter-item monthly">
+                <span class="counter-value" id="count-monthly">-</span>
+                <span class="counter-label">Bu Ay</span>
+            </div>
+            <div class="counter-item total">
+                <span class="counter-value" id="count-total">-</span>
+                <span class="counter-label">Ümumi</span>
+            </div>
+        </div>
+    </div>
+
     <div id="imageModal" class="modal" onclick="closeModal(event)">
         <span class="modal-close" onclick="closeModal(event)">&times;</span>
         <img id="modalImg" src="" alt="Mövzu">
@@ -218,11 +215,10 @@
 
     <footer>
         <p>&copy; 2024 C2026 Layihəsi. Yusf tərəfindən hazırlanmışdır.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">GitHub Pages üzərində hostinq edilir.</p>
     </footer>
 
     <script>
-        // --- MƏNTIQ (JAVASCRIPT) ---
-        
         const subjects = {
             'azerbaycan': '🇦🇿 Azərbaycan Dili',
             'ingilis': '🇬🇧 İngilis Dili',
@@ -231,31 +227,133 @@
 
         let currentSubject = 'azerbaycan';
         let dbData = {};
+        let allTopics = [];
 
         const navbar = document.getElementById('navbar');
         const contentArea = document.getElementById('content-area');
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
+        const searchInput = document.getElementById('searchInput');
 
-        // 1. Məlumatları Yüklə (data.json-dan)
+        // ✅ ZİYARƏTÇİ SAYACI AÇARLARI (HAZIR)
+        const COUNTER_KEYS = {
+            daily: 'yusf-c2026-portal-daily',
+            weekly: 'yusf-c2026-portal-weekly',
+            monthly: 'yusf-c2026-portal-monthly',
+            total: 'yusf-c2026-portal-total'
+        };
+
+        // 1. Məlumatları Yüklə
         async function loadData() {
             try {
-                const response = await fetch('data.json');
-                if (!response.ok) throw new Error('data.json tapılmadı');
-                dbData = await response.json();
-                initApp();
+                const response = await fetch('data.json?t=' + new Date().getTime());
+                if (!response.ok) throw new Error(`HTTP xətası: ${response.status}`);
+                const text = await response.text();
+                try {
+                    dbData = JSON.parse(text);
+                    collectAllTopics();
+                    initApp();
+                    loadVisitorCount(); // Sayacı yüklə
+                } catch (e) {
+                    throw new Error('JSON formatı səhvdir!');
+                }
             } catch (error) {
-                contentArea.innerHTML = `<div class="error">❌ Xəta: ${error.message}<br><small>data.json faylının olduğunu yoxlayın.</small></div>`;
+                contentArea.innerHTML = `<div class="error"><strong>❌ Xəta:</strong><br>${error.message}<br><small>data.json faylını yoxlayın.</small></div>`;
             }
         }
 
-        // 2. Tətbiqi Başlat
+        // 2. Ziyarətçi Sayacını Yüklə və Yenilə
+        async function loadVisitorCount() {
+            const today = new Date().toISOString().split('T')[0];
+            const weekNum = getWeekNumber(new Date());
+            const month = new Date().getMonth() + 1;
+
+            const lastCheck = localStorage.getItem('counter-last-check');
+            const lastDay = localStorage.getItem('counter-last-day');
+            const lastWeek = localStorage.getItem('counter-last-week');
+            const lastMonth = localStorage.getItem('counter-last-month');
+
+            await updateCounter('daily', lastDay !== today);
+            await updateCounter('weekly', lastWeek !== weekNum.toString());
+            await updateCounter('monthly', lastMonth !== month.toString());
+            await updateCounter('total', true);
+
+            localStorage.setItem('counter-last-check', today);
+            if (lastDay !== today) localStorage.setItem('counter-last-day', today);
+            if (lastWeek !== weekNum.toString()) localStorage.setItem('counter-last-week', weekNum.toString());
+            if (lastMonth !== month.toString()) localStorage.setItem('counter-last-month', month.toString());
+        }
+
+        async function updateCounter(type, shouldIncrement) {
+            const element = document.getElementById(`count-${type}`);
+            const key = COUNTER_KEYS[type];
+
+            try {
+                let url = `https://api.countapi.xyz/get/yusf-c2026-portal/${type}`;
+                
+                if (shouldIncrement) {
+                    url = `https://api.countapi.xyz/hit/yusf-c2026-portal/${type}`;
+                }
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.value !== undefined) {
+                    animateValue(element, 0, data.value, 1000);
+                } else {
+                    element.textContent = '0';
+                }
+            } catch (error) {
+                element.textContent = 'N/A';
+                console.error(`${type} sayac xətası:`, error);
+            }
+        }
+
+        function getWeekNumber(d) {
+            d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+            var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+            var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+            return weekNo;
+        }
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('az-AZ');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function collectAllTopics() {
+            allTopics = [];
+            for (const [subjectKey, subjectData] of Object.entries(dbData)) {
+                for (const [category, items] of Object.entries(subjectData)) {
+                    if (items && items.length > 0) {
+                        items.forEach(item => {
+                            allTopics.push({
+                                subject: subjectKey,
+                                subjectName: subjects[subjectKey],
+                                category: category,
+                                ...item
+                            });
+                        });
+                    }
+                }
+            }
+        }
+
         function initApp() {
             renderNav();
             renderContent(currentSubject);
+            setupSearch();
         }
 
-        // 3. Naviqasiya Düymələrini Qur
         function renderNav() {
             navbar.innerHTML = '';
             for (const key in subjects) {
@@ -267,15 +365,197 @@
             }
         }
 
-        // 4. Mövzunu Dəyiş
         function switchSubject(key) {
             currentSubject = key;
-            renderNav(); // Aktiv düyməni yenilə
+            searchInput.value = '';
+            renderNav();
             renderContent(key);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 5. Məzmunu Ekrana Çıxar (Əsas Funksiya)
+        function setupSearch() {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                if (query === '') {
+                    renderContent(currentSubject);
+                    return;
+                }
+                const results = allTopics.filter(topic => {
+                    return topic.title.toLowerCase().includes(query) ||
+                           topic.description.toLowerCase().includes(query) ||
+                           topic.category.toLowerCase().includes(query) ||
+                           topic.subjectName.toLowerCase().includes(query);
+                });
+                renderSearchResults(results, query);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    renderContent(currentSubject);
+                    searchInput.blur();
+                }
+            });
+        }
+
+        function renderSearchResults(results, query) {
+            contentArea.innerHTML = '';
+            const infoPanel = document.createElement('div');
+            infoPanel.className = 'search-info';
+            infoPanel.innerHTML = `
+                <span>🔍 "<strong>${query}</strong>" üçün ${results.length} nəticə tapıldı</span>
+                <button class="clear-search" onclick="clearSearch()">Təmizlə ✕</button>
+            `;
+            contentArea.appendChild(infoPanel);
+
+            if (results.length === 0) {
+                contentArea.innerHTML += `
+                    <div class="no-results">
+                        <div class="no-results-icon">😕</div>
+                        <h3>Heç nə tapılmadı</h3>
+                        <p>Fərqli açar sözlərlə axtarış edin.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const grouped = {};
+            results.forEach(topic => {
+                const key = `${topic.subject}|${topic.category}`;
+                if (!grouped[key]) {
+                    grouped[key] = {
+                        subject: topic.subject,
+                        subjectName: topic.subjectName,
+                        category: topic.category,
+                        items: []
+                    };
+                }
+                grouped[key].items.push(topic);
+            });
+
+            for (const group of Object.values(grouped)) {
+                const catTitle = document.createElement('div');
+                catTitle.className = 'category-title';
+                const formattedCat = group.category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                catTitle.innerHTML = `${group.subjectName} • 📂 ${formattedCat}`;
+                contentArea.appendChild(catTitle);
+
+                const grid = document.createElement('div');
+                grid.className = 'grid';
+
+                group.items.forEach(item => {
+                    const card = createCard(item);
+                    grid.appendChild(card);
+                });
+
+                contentArea.appendChild(grid);
+            }
+        }
+
+        function clearSearch() {
+            searchInput.value = '';
+            renderContent(currentSubject);
+        }
+
+        function showRandomTopic() {
+            if (allTopics.length === 0) {
+                alert('⚠️ Hal-hazırda göstəriləcək mövzu yoxdur!');
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * allTopics.length);
+            const randomTopic = allTopics[randomIndex];
+
+            searchInput.value = `🎲 Təsadüfi seçildi: ${randomTopic.title}`;
+            searchInput.style.background = '#FEF3C7';
+            setTimeout(() => {
+                searchInput.style.background = 'white';
+            }, 500);
+
+            if (randomTopic.type === 'image') {
+                openModal(randomTopic.link);
+            } else {
+                window.open(randomTopic.link, '_blank');
+            }
+
+            showTopicInfo(randomTopic);
+        }
+
+        function showTopicInfo(topic) {
+            const formattedCat = topic.category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            
+            const infoDiv = document.createElement('div');
+            infoDiv.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: white;
+                padding: 20px 30px;
+                border-radius: 16px;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+                z-index: 1001;
+                max-width: 90%;
+                text-align: center;
+                animation: slideUp 0.3s ease;
+            `;
+            infoDiv.innerHTML = `
+                <h3 style="margin-bottom: 8px; color: var(--primary);">${topic.title}</h3>
+                <p style="color: var(--text-gray); font-size: 0.9rem;">
+                    ${topic.subjectName} • ${formattedCat}
+                </p>
+                <button onclick="this.parentElement.remove()" style="
+                    margin-top: 10px;
+                    background: var(--primary);
+                    color: white;
+                    border: none;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-family: inherit;
+                }}">Bağla</button>
+            `;
+            
+            const oldInfo = document.querySelector('.random-topic-info');
+            if (oldInfo) oldInfo.remove();
+            
+            infoDiv.classList.add('random-topic-info');
+            document.body.appendChild(infoDiv);
+
+            setTimeout(() => {
+                if (infoDiv.parentElement) {
+                    infoDiv.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => infoDiv.remove(), 300);
+                }
+            }, 5000);
+        }
+
+        function createCard(item) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            const typeClass = item.type || 'link';
+            const typeLabel = typeClass.toUpperCase();
+
+            const handleClick = () => {
+                if (item.type === 'image') {
+                    openModal(item.link);
+                } else {
+                    window.open(item.link, '_blank');
+                }
+            };
+
+            card.onclick = handleClick;
+            card.innerHTML = `
+                <span class="badge ${typeClass}">${typeLabel}</span>
+                <h3>${item.title}</h3>
+                <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
+                <div class="card-action">
+                    ${item.type === 'image' ? '👁️ Bax' : '🔗 Keçid'} <span>→</span>
+                </div>
+            `;
+            return card;
+        }
+
         function renderContent(subjectKey) {
             contentArea.innerHTML = '';
             const data = dbData[subjectKey];
@@ -285,50 +565,20 @@
                 return;
             }
 
-            // Hər kateqoriya üzrə dövrə
             for (const [category, items] of Object.entries(data)) {
                 if (!items || items.length === 0) continue;
 
-                // Kateqoriya Başlığı
                 const catTitle = document.createElement('div');
                 catTitle.className = 'category-title';
-                // Başlığı gözəlləşdir (məs: imla_qaydalari -> Imla Qaydalari)
                 const formattedCat = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
                 catTitle.innerHTML = `📂 ${formattedCat}`;
                 contentArea.appendChild(catTitle);
 
-                // Grid Yarad
                 const grid = document.createElement('div');
                 grid.className = 'grid';
 
-                // Kartları Yarad
                 items.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    
-                    // Tipə görə badge seç
-                    const typeClass = item.type || 'link';
-                    const typeLabel = typeClass.toUpperCase();
-
-                    // Klik hadisəsi
-                    const handleClick = () => {
-                        if (item.type === 'image') {
-                            openModal(item.link);
-                        } else {
-                            window.open(item.link, '_blank');
-                        }
-                    };
-
-                    card.onclick = handleClick;
-
-                    card.innerHTML = `
-                        <span class="badge ${typeClass}">${typeLabel}</span>
-                        <h3>${item.title}</h3>
-                        <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
-                        <div class="card-action">
-                            ${item.type === 'image' ? '👁️ Bax' : '🔗 Keçid'} <span>→</span>
-                        </div>
-                    `;
+                    const card = createCard(item);
                     grid.appendChild(card);
                 });
 
@@ -336,11 +586,10 @@
             }
         }
 
-        // 6. Modal Funksiyaları
         function openModal(src) {
             modalImg.src = src;
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Scrollu bağla
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal(e) {
@@ -351,10 +600,32 @@
             }
         }
 
-        // ESC düyməsi ilə bağlama
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal({target: modal});
+            if (e.key === 'Escape') {
+                if (modal.classList.contains('active')) {
+                    closeModal({target: modal});
+                } else if (searchInput.value !== '') {
+                    clearSearch();
+                }
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+                e.preventDefault();
+                showRandomTopic();
+            }
         });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from { transform: translateX(-50%) translateY(20px); opacity: 0; }
+                to { transform: translateX(-50%) translateY(0); opacity: 1; }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
         // İşə Sal
         loadData();
