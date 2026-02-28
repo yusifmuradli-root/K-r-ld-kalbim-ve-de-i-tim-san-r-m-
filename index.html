@@ -96,7 +96,7 @@
         .clear-search { background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.9rem; }
         .clear-search:hover { text-decoration: underline; }
         
-        /* Sadə Ziyarətçi Sayacı */
+        /* Ziyarətçi Sayacı */
         .visitor-counter {
             text-align: center;
             margin: 30px auto;
@@ -111,6 +111,11 @@
             height: 28px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .visitor-counter img:hover {
+            transform: scale(1.05);
         }
         
         footer {
@@ -151,12 +156,13 @@
         <div class="status">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <!-- Ziyarətçi Sayacı (Hits.se) -->
+    <!-- Ziyarətçi Sayacı (Hits.se) - Sənin saytın üçün -->
     <div class="visitor-counter">
         <p>👁️ Sayta ümumi baxış sayı:</p>
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyusf.github.io%2Fimtahan-sayti&count_bg=%234F46E5&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=BAIXI%C5%9E&edge_flat=false" 
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyusifmuradli-root.github.io%2FK-r-ld-kalbim-ve-de-i-tim-san-r-m-%2F&count_bg=%234F46E5&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=BAIXI%C5%9E&edge_flat=false" 
              alt="Ziyarətçi sayı" 
-             title="Ümumi baxış sayı">
+             title="Ümumi baxış sayı"
+             style="height: 28px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
     </div>
 
     <div id="imageModal" class="modal" onclick="closeModal(event)">
