@@ -3,140 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C2026 | İmtahana Hazırlıq</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>C2026 | İmtahana Hazırlıq Portalı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #4F46E5;
-            --primary-hover: #4338ca;
-            --bg-color: #F9FAFB;
-            --card-bg: #ffffff;
+            --primary-dark: #4338ca;
+            --secondary: #10B981;
+            --bg-body: #F3F4F6;
+            --bg-card: #FFFFFF;
             --text-main: #1F2937;
-            --text-light: #6B7280;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --radius: 12px;
+            --text-muted: #6B7280;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 16px;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--primary), #818CF8);
             color: white;
-            padding: 3rem 1rem;
+            padding: 3rem 1.5rem;
             text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: var(--shadow);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: var(--shadow-md);
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        header p { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
+            gap: 12px;
+            margin: -1rem auto 2rem;
             padding: 0 1rem;
+            position: relative;
+            z-index: 10;
         }
 
-        nav button {
-            background: var(--card-bg);
-            border: 2px solid transparent;
+        .nav-btn {
+            background: var(--bg-card);
+            border: none;
             padding: 12px 24px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-light);
+            color: var(--text-muted);
             cursor: pointer;
             border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            font-family: 'Poppins', sans-serif;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
         }
 
-        nav button:hover { transform: translateY(-2px); color: var(--primary); }
-        nav button.active { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.39); }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .content-section { display: none; animation: fadeIn 0.5s; }
-        .content-section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .category-header {
-            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+        .nav-btn:hover { transform: translateY(-2px); color: var(--primary); }
+        .nav-btn.active {
+            background: var(--primary);
             color: white;
-            padding: 15px 20px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Loading & Error States */
+        .status-msg {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        .error-msg {
+            background: #FEE2E2;
+            color: #DC2626;
+            padding: 1.5rem;
             border-radius: var(--radius);
-            margin: 25px 0 15px 0;
-            font-size: 1.3rem;
-            font-weight: 600;
+            text-align: center;
+            border: 1px solid #FECACA;
+        }
+
+        /* Categories & Grid */
+        .category-block {
+            margin-bottom: 3rem;
+            animation: slideUp 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
         }
 
-        .topic-card {
-            background: var(--card-bg);
-            padding: 25px;
+        /* Cards */
+        .card {
+            background: var(--bg-card);
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
             border: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
-        .topic-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
-        .topic-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
-        .topic-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
-
-        .btn-link {
-            display: inline-block;
-            text-align: center;
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s;
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
 
-        .btn-link:hover { background-color: var(--primary-hover); }
+        .card-type-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .type-image { background: #DBEAFE; color: #1E40AF; }
+        .type-video { background: #FEE2E2; color: #991B1B; }
+        .type-pdf { background: #DCFCE7; color: #166534; }
+        .type-link { background: #F3F4F6; color: #374151; }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            padding-right: 40px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-action {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            gap: 6px;
+        }
+        
+        .card:hover .card-action { gap: 10px; transition: gap 0.3s; }
 
         /* Modal */
         .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);
-            align-items: center; justify-content: center; padding: 20px;
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .modal.active { display: flex; }
-        .modal-content { max-width: 90%; max-height: 90%; border-radius: 8px; }
+        .modal.show { display: flex; opacity: 1; }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal.show .modal-content { transform: scale(1); }
+        
         .modal-close {
-            position: absolute; top: 20px; right: 30px; color: white;
-            font-size: 40px; font-weight: bold; cursor: pointer;
+            position: absolute;
+            top: 20px; right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
         }
         .modal-close:hover { color: var(--primary); }
 
-        /* Loading */
-        .loading { text-align: center; padding: 3rem; font-size: 1.2rem; color: var(--text-light); }
-        .error { background: #FEE2E2; color: #DC2626; padding: 1rem; border-radius: var(--radius); margin: 1rem 0; }
-
+        /* Footer */
         footer {
-            text-align: center; padding: 2rem; background-color: white;
-            color: var(--text-light); border-top: 1px solid #E5E7EB; margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #E5E7EB;
+            margin-top: auto;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             header h1 { font-size: 2rem; }
-            nav button { width: 100%; margin-bottom: 5px; }
+            .nav-btn { width: 100%; text-align: center; }
+            .topics-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -144,145 +268,181 @@
 
     <header>
         <h1>C2026 Hazırlıq Portalı</h1>
-        <p>Bütün resurslar bir yerdə</p>
+        <p>Bütün lazımi resurslar bir klik uzaqlığında</p>
     </header>
 
-    <div class="container">
-        <nav>
-            <button onclick="showSection('azerbaycan')" class="active" id="btn-azerbaycan">🇦🇿 Azərbaycan Dili</button>
-            <button onclick="showSection('ingilis')" id="btn-ingilis">🇬🇧 İngilis Dili</button>
-            <button onclick="showSection('riyaziyyat')" id="btn-riyaziyyat">📐 Riyaziyyat</button>
-        </nav>
+    <nav id="navbar">
+        <!-- Düymələr JS ilə doldurulacaq -->
+    </nav>
 
-        <div id="content-area">
-            <div class="loading">⏳ Məlumatlar yüklənir...</div>
-        </div>
-
-        <div class="readme-section" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: var(--radius); padding: 2rem; margin-top: 2rem;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">📝 Necə Əlavə Etmək Olar?</h2>
-            <ol style="color: var(--text-light); line-height: 2;">
-                <li><code>data.json</code> faylını aç</li>
-                <li>Uyğun fənn və kateqoriyanı tap</li>
-                <li>Yeni mövzu əlavə et:
-                    <pre style="background: white; padding: 10px; border-radius: 8px; margin-top: 5px; overflow-x: auto;">
-{
-  "title": "Mövzu adı",
-  "description": "Qısa izahat",
-  "link": "https://link-burada",
-  "type": "image" // image, video, pdf, link
-}</pre>
-                </li>
-                <li>Save et və GitHub-a push et</li>
-                <li>5 dəqiqə sonra sayt yenilənəcək!</li>
-            </ol>
-        </div>
+    <div class="container" id="main-content">
+        <div class="status-msg">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImg">
+    <!-- Modal for Images -->
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <span class="modal-close" onclick="closeModal(event)">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Mövzu şəkli">
     </div>
 
     <footer>
-        <p>© 2024 C2026 | Yusf tərəfindən hazırlanmışdır</p>
+        <p>&copy; 2024 C2026 Layihəsi. Yusf tərəfindən hazırlanmışdır.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">GitHub Pages üzərində hostinq edilir.</p>
     </footer>
 
     <script>
-        let database = {};
-        let currentSection = 'azerbaycan';
+        // Konfiqurasiya
+        const SUBJECTS = {
+            'azerbaycan': { label: '🇦🇿 Azərbaycan Dili', icon: '📚' },
+            'ingilis': { label: '🇬🇧 İngilis Dili', icon: '🔤' },
+            'riyaziyyat': { label: '📐 Riyaziyyat', icon: '➗' }
+        };
 
-        // Məlumatları yüklə
-        async function loadDatabase() {
+        let currentSubject = 'azerbaycan';
+        let dbData = {};
+
+        // Elementlər
+        const navbar = document.getElementById('navbar');
+        const contentArea = document.getElementById('main-content');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        // 1. Məlumatları Yüklə
+        async function fetchData() {
             try {
                 const response = await fetch('data.json');
-                if (!response.ok) throw new Error('data.json tapılmadı');
-                database = await response.json();
-                renderSection(currentSection);
+                if (!response.ok) throw new Error('data.json tapılmadı və ya oxunmadı.');
+                dbData = await response.json();
+                initApp();
             } catch (error) {
-                document.getElementById('content-area').innerHTML = `
-                    <div class="error">
-                        <strong>❌ Xəta:</strong> ${error.message}<br>
-                        <small>data.json faylının repositorydə olduğundan əmin olun.</small>
+                contentArea.innerHTML = `
+                    <div class="error-msg">
+                        <strong>❌ Xəta:</strong> ${error.message}<br><br>
+                        <small>Zəhmət olmasa repository-də <code>data.json</code> faylının olduğundan və düzgün formatda olduğundan əmin olun.</small>
                     </div>
                 `;
+                console.error(error);
             }
         }
 
-        // Bölməni render et
-        function renderSection(section) {
-            const contentArea = document.getElementById('content-area');
-            const data = database[section];
-
-            if (!data) {
-                contentArea.innerHTML = '<div class="error">Bu fənn üçün məlumat yoxdur</div>';
-                return;
-            }
-
-            let html = '';
-            for (const [category, topics] of Object.entries(data)) {
-                html += `<div class="category-header">📚 ${category.charAt(0).toUpperCase() + category.slice(1)}</div>`;
-                html += `<div class="topics-grid">`;
-                
-                topics.forEach((topic, index) => {
-                    const typeIcon = {
-                        'image': '🖼️',
-                        'video': '🎥',
-                        'pdf': '📄',
-                        'link': '🔗'
-                    }[topic.type] || '📎';
-
-                    const onClick = topic.type === 'image' 
-                        ? `onclick="openModal('${topic.link}')"`
-                        : `onclick="window.open('${topic.link}', '_blank')" style="cursor: pointer;"`;
-
-                    html += `
-                        <div class="topic-card" ${onClick}>
-                            <h3>${typeIcon} ${topic.title}</h3>
-                            <p>${topic.description}</p>
-                            <span class="btn-link">${topic.type === 'image' ? '👁️ Bax' : '🔗 Keçid'}</span>
-                        </div>
-                    `;
-                });
-                
-                html += `</div>`;
-            }
-
-            contentArea.innerHTML = html;
+        // 2. Tətbiqi Başlat
+        function initApp() {
+            renderNav();
+            renderContent(currentSubject);
         }
 
-        // Bölmə dəyiş
-        function showSection(section) {
-            currentSection = section;
-            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
+        // 3. Naviqasiyanı Qur
+        function renderNav() {
+            navbar.innerHTML = '';
+            Object.keys(SUBJECTS).forEach(key => {
+                const btn = document.createElement('button');
+                btn.className = `nav-btn ${key === currentSubject ? 'active' : ''}`;
+                btn.textContent = SUBJECTS[key].label;
+                btn.onclick = () => switchSubject(key);
+                navbar.appendChild(btn);
+            });
+        }
+
+        // 4. Mövzunu Dəyiş
+        function switchSubject(subjectKey) {
+            currentSubject = subjectKey;
             
-            if (database[section]) {
-                renderSection(section);
-            }
-            
-            document.getElementById('btn-' + section).classList.add('active');
+            // Düymələri yenilə
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(SUBJECTS[subjectKey].label.split(' ')[1])) {
+                    btn.classList.add('active');
+                }
+            });
+
+            renderContent(subjectKey);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Modal
+        // 5. Məzmunu Render Et (Əsas Məntiq)
+        function renderContent(subjectKey) {
+            contentArea.innerHTML = '';
+            const data = dbData[subjectKey];
+
+            if (!data || Object.keys(data).length === 0) {
+                contentArea.innerHTML = `<div class="status-msg">Bu fənn üçün hələ məlumat əlavə edilməyib.<br><small>data.json faylını redaktə edin.</small></div>`;
+                return;
+            }
+
+            // Hər kateqoriya üçün dövrə
+            Object.entries(data).forEach(([category, items], index) => {
+                if (!items || items.length === 0) return; // Boş kateqoriyaları göstərmə
+
+                const categoryBlock = document.createElement('div');
+                categoryBlock.className = 'category-block';
+                categoryBlock.style.animationDelay = `${index * 0.1}s`;
+
+                // Kateqoriya Başlığı (İlk hərfi böyük et və _ əvəzinə boşluq qoy)
+                const formattedCategory = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                
+                let html = `<div class="category-title">${getCategoryIcon(category)} ${formattedCategory}</div>`;
+                html += `<div class="topics-grid">`;
+
+                items.forEach(item => {
+                    const typeClass = `type-${item.type || 'link'}`;
+                    const typeLabel = item.type ? item.type.toUpperCase() : 'LINK';
+                    const actionText = item.type === 'image' ? '👁️ Bax' : '🔗 Keçid';
+                    
+                    // Klik hadisəsi
+                    const clickAction = item.type === 'image' 
+                        ? `onclick="openModal('${item.link}')"` 
+                        : `onclick="window.open('${item.link}', '_blank')" style="cursor:pointer;"`;
+
+                    html += `
+                        <div class="card" ${clickAction}>
+                            <span class="card-type-badge ${typeClass}">${typeLabel}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
+                            <div class="card-action">
+                                ${actionText} <span>→</span>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+                categoryBlock.innerHTML = html;
+                contentArea.appendChild(categoryBlock);
+            });
+        }
+
+        // Köməkçi: Kateqoriya ikonu
+        function getCategoryIcon(cat) {
+            const icons = {
+                'fonetika': '🗣️', 'imla_qaydalari': '📝', 'sintaksis': '📜', 'test_toplulari': '✅',
+                'grammar': '🔤', 'vocabulary': '📖', 'reading_writing': '✍️',
+                'cebr': '➗', 'hendese': '📐', 'trigonometriya': '📈', 'funksiyalar': '∫'
+            };
+            return icons[cat] || '📂';
+        }
+
+        // Modal Funksiyaları
         function openModal(src) {
-            const modal = document.getElementById('imageModal');
-            document.getElementById('modalImg').src = src;
-            modal.classList.add('active');
+            modalImg.src = src;
+            modal.classList.add('show');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            document.getElementById('imageModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function closeModal(e) {
+            if (e.target === modal || e.target.classList.contains('modal-close')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+                setTimeout(() => { modalImg.src = ''; }, 300);
+            }
         }
 
+        // ESC düyməsi ilə bağlama
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal({ target: modal });
         });
 
         // Başlat
-        loadDatabase();
+        fetchData();
     </script>
 </body>
 </html>
