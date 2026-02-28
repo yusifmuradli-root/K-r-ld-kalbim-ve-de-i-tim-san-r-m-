@@ -96,55 +96,22 @@
         .clear-search { background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.9rem; }
         .clear-search:hover { text-decoration: underline; }
         
-        /* Ziyarətçi Sayacı Stili */
+        /* Sadə Ziyarətçi Sayacı */
         .visitor-counter {
-            background: white;
-            border-radius: var(--radius);
-            padding: 20px;
+            text-align: center;
             margin: 30px auto;
-            max-width: 600px;
-            box-shadow: var(--shadow);
-            border: 1px solid #E5E7EB;
+            padding: 15px;
         }
-        .visitor-counter h3 {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+        .visitor-counter p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 10px;
         }
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+        .visitor-counter img {
+            height: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .counter-item {
-            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
-            padding: 15px 10px;
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .counter-item:hover { transform: translateY(-3px); }
-        .counter-item.daily { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
-        .counter-item.weekly { background: linear-gradient(135deg, #DCFCE7, #BBF7D0); }
-        .counter-item.monthly { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
-        .counter-item.total { background: linear-gradient(135deg, #4F46E5, #818CF8); color: white; }
-        .counter-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .counter-label {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            font-weight: 500;
-        }
-        .counter-item.total .counter-label { opacity: 0.9; }
         
         footer {
             text-align: center;
@@ -159,7 +126,6 @@
         @media (max-width: 600px) {
             .search-container { flex-direction: column; }
             .random-btn { justify-content: center; }
-            .counter-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -185,27 +151,12 @@
         <div class="status">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <!-- Ziyarətçi Sayacı -->
+    <!-- Ziyarətçi Sayacı (Hits.se) -->
     <div class="visitor-counter">
-        <h3>👁️ Ziyarətçi Statistikası</h3>
-        <div class="counter-grid">
-            <div class="counter-item daily">
-                <span class="counter-value" id="count-daily">-</span>
-                <span class="counter-label">Bu Gün</span>
-            </div>
-            <div class="counter-item weekly">
-                <span class="counter-value" id="count-weekly">-</span>
-                <span class="counter-label">Bu Həftə</span>
-            </div>
-            <div class="counter-item monthly">
-                <span class="counter-value" id="count-monthly">-</span>
-                <span class="counter-label">Bu Ay</span>
-            </div>
-            <div class="counter-item total">
-                <span class="counter-value" id="count-total">-</span>
-                <span class="counter-label">Ümumi</span>
-            </div>
-        </div>
+        <p>👁️ Sayta ümumi baxış sayı:</p>
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyusf.github.io%2Fimtahan-sayti&count_bg=%234F46E5&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=BAIXI%C5%9E&edge_flat=false" 
+             alt="Ziyarətçi sayı" 
+             title="Ümumi baxış sayı">
     </div>
 
     <div id="imageModal" class="modal" onclick="closeModal(event)">
@@ -235,14 +186,6 @@
         const modalImg = document.getElementById('modalImg');
         const searchInput = document.getElementById('searchInput');
 
-        // ✅ ZİYARƏTÇİ SAYACI AÇARLARI (HAZIR)
-        const COUNTER_KEYS = {
-            daily: 'yusf-c2026-portal-daily',
-            weekly: 'yusf-c2026-portal-weekly',
-            monthly: 'yusf-c2026-portal-monthly',
-            total: 'yusf-c2026-portal-total'
-        };
-
         // 1. Məlumatları Yüklə
         async function loadData() {
             try {
@@ -253,81 +196,12 @@
                     dbData = JSON.parse(text);
                     collectAllTopics();
                     initApp();
-                    loadVisitorCount(); // Sayacı yüklə
                 } catch (e) {
                     throw new Error('JSON formatı səhvdir!');
                 }
             } catch (error) {
                 contentArea.innerHTML = `<div class="error"><strong>❌ Xəta:</strong><br>${error.message}<br><small>data.json faylını yoxlayın.</small></div>`;
             }
-        }
-
-        // 2. Ziyarətçi Sayacını Yüklə və Yenilə
-        async function loadVisitorCount() {
-            const today = new Date().toISOString().split('T')[0];
-            const weekNum = getWeekNumber(new Date());
-            const month = new Date().getMonth() + 1;
-
-            const lastCheck = localStorage.getItem('counter-last-check');
-            const lastDay = localStorage.getItem('counter-last-day');
-            const lastWeek = localStorage.getItem('counter-last-week');
-            const lastMonth = localStorage.getItem('counter-last-month');
-
-            await updateCounter('daily', lastDay !== today);
-            await updateCounter('weekly', lastWeek !== weekNum.toString());
-            await updateCounter('monthly', lastMonth !== month.toString());
-            await updateCounter('total', true);
-
-            localStorage.setItem('counter-last-check', today);
-            if (lastDay !== today) localStorage.setItem('counter-last-day', today);
-            if (lastWeek !== weekNum.toString()) localStorage.setItem('counter-last-week', weekNum.toString());
-            if (lastMonth !== month.toString()) localStorage.setItem('counter-last-month', month.toString());
-        }
-
-        async function updateCounter(type, shouldIncrement) {
-            const element = document.getElementById(`count-${type}`);
-            const key = COUNTER_KEYS[type];
-
-            try {
-                let url = `https://api.countapi.xyz/get/yusf-c2026-portal/${type}`;
-                
-                if (shouldIncrement) {
-                    url = `https://api.countapi.xyz/hit/yusf-c2026-portal/${type}`;
-                }
-
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (data.value !== undefined) {
-                    animateValue(element, 0, data.value, 1000);
-                } else {
-                    element.textContent = '0';
-                }
-            } catch (error) {
-                element.textContent = 'N/A';
-                console.error(`${type} sayac xətası:`, error);
-            }
-        }
-
-        function getWeekNumber(d) {
-            d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-            var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-            var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-            return weekNo;
-        }
-
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('az-AZ');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
         }
 
         function collectAllTopics() {
