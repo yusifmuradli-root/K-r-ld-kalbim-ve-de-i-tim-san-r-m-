@@ -3,264 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C2026 | İmtahana Hazırlıq Portalı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>C2026 | İmtahana Hazırlıq</title>
+    <!-- Müasir Şrift -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- DİZAYN (CSS) --- */
         :root {
-            --primary: #4F46E5;
-            --primary-dark: #4338ca;
-            --secondary: #10B981;
+            --primary: #4F46E5;       /* Əsas rəng */
+            --primary-hover: #4338ca;
             --bg-body: #F3F4F6;
             --bg-card: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --text-dark: #1F2937;
+            --text-gray: #6B7280;
             --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-body);
-            color: var(--text-main);
+            color: var(--text-dark);
             line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, var(--primary), #818CF8);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 3rem 1rem;
             text-align: center;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
             margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
         }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
 
-        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        header p { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
-
-        /* Navigation */
+        /* Naviqasiya */
         nav {
             display: flex;
             justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 12px;
             margin: -1rem auto 2rem;
             padding: 0 1rem;
             position: relative;
             z-index: 10;
         }
-
         .nav-btn {
-            background: var(--bg-card);
+            background: white;
             border: none;
-            padding: 12px 24px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            cursor: pointer;
+            padding: 12px 25px;
             border-radius: 50px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            color: var(--text-gray);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
             font-family: inherit;
         }
-
-        .nav-btn:hover { transform: translateY(-2px); color: var(--primary); }
+        .nav-btn:hover { transform: translateY(-3px); color: var(--primary); }
         .nav-btn.active {
             background: var(--primary);
             color: white;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
         }
 
-        /* Main Container */
+        /* Konteyner */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px 40px;
-            flex: 1;
-            width: 100%;
+            min-height: 60vh;
         }
 
-        /* Loading & Error States */
-        .status-msg {
-            text-align: center;
-            padding: 3rem;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-        .error-msg {
-            background: #FEE2E2;
-            color: #DC2626;
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            text-align: center;
-            border: 1px solid #FECACA;
-        }
-
-        /* Categories & Grid */
-        .category-block {
-            margin-bottom: 3rem;
-            animation: slideUp 0.5s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Kateqoriya Başlıqları */
         .category-title {
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 1.2rem;
+            margin: 30px 0 15px;
             padding-left: 15px;
             border-left: 5px solid var(--primary);
+            color: var(--text-dark);
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .topics-grid {
+        /* Kartlar Grid */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
+            gap: 25px;
         }
 
-        /* Cards */
+        /* Kart Dizaynı */
         .card {
             background: var(--bg-card);
+            padding: 25px;
             border-radius: var(--radius);
-            padding: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #E5E7EB;
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            border: 1px solid #E5E7EB;
             display: flex;
             flex-direction: column;
-            height: 100%;
             position: relative;
             overflow: hidden;
         }
-
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             border-color: var(--primary);
         }
 
-        .card-type-badge {
+        /* Tip Etiketləri (Image, Video və s.) */
+        .badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
+        .badge.image { background: #DBEAFE; color: #1E40AF; }
+        .badge.video { background: #FEE2E2; color: #991B1B; }
+        .badge.pdf { background: #DCFCE7; color: #166534; }
+        .badge.link { background: #F3F4F6; color: #374151; }
+
+        .card h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text-dark); padding-right: 40px; }
+        .card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
         
-        .type-image { background: #DBEAFE; color: #1E40AF; }
-        .type-video { background: #FEE2E2; color: #991B1B; }
-        .type-pdf { background: #DCFCE7; color: #166534; }
-        .type-link { background: #F3F4F6; color: #374151; }
-
-        .card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-main);
-            padding-right: 40px;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            flex-grow: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
         .card-action {
-            margin-top: auto;
-            display: inline-flex;
-            align-items: center;
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--primary);
-            gap: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
-        
         .card:hover .card-action { gap: 10px; transition: gap 0.3s; }
 
-        /* Modal */
+        /* Modal (Şəkil üçün) */
         .modal {
             display: none;
             position: fixed;
             z-index: 1000;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
-            align-items: center;
+            background-color: rgba(0,0,0,0.9);
             justify-content: center;
+            align-items: center;
             padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
-        .modal.show { display: flex; opacity: 1; }
-        
-        .modal-content {
+        .modal.active { display: flex; animation: fadeIn 0.3s; }
+        .modal img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-        .modal.show .modal-content { transform: scale(1); }
-        
         .modal-close {
             position: absolute;
             top: 20px; right: 30px;
             color: white;
             font-size: 40px;
-            font-weight: bold;
             cursor: pointer;
-            transition: color 0.2s;
-            line-height: 1;
+            font-weight: bold;
         }
-        .modal-close:hover { color: var(--primary); }
 
-        /* Footer */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Loading & Error */
+        .status { text-align: center; padding: 40px; color: var(--text-gray); font-size: 1.1rem; }
+        .error { color: #DC2626; background: #FEE2E2; padding: 15px; border-radius: 10px; text-align: center; }
+
         footer {
             text-align: center;
             padding: 2rem;
             background: white;
-            color: var(--text-muted);
+            color: var(--text-gray);
             font-size: 0.9rem;
-            border-top: 1px solid #E5E7EB;
             margin-top: auto;
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .nav-btn { width: 100%; text-align: center; }
-            .topics-grid { grid-template-columns: 1fr; }
+            border-top: 1px solid #E5E7EB;
         }
     </style>
 </head>
@@ -268,60 +199,53 @@
 
     <header>
         <h1>C2026 Hazırlıq Portalı</h1>
-        <p>Bütün lazımi resurslar bir klik uzaqlığında</p>
+        <p>Bütün resurslar bir yerdə</p>
     </header>
 
     <nav id="navbar">
-        <!-- Düymələr JS ilə doldurulacaq -->
+        <!-- Düymələr JS ilə yaradılacaq -->
     </nav>
 
-    <div class="container" id="main-content">
-        <div class="status-msg">⏳ Məlumatlar yüklənir...</div>
+    <div class="container" id="content-area">
+        <div class="status">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <!-- Modal for Images -->
+    <!-- Şəkil Modalı -->
     <div id="imageModal" class="modal" onclick="closeModal(event)">
         <span class="modal-close" onclick="closeModal(event)">&times;</span>
-        <img class="modal-content" id="modalImg" alt="Mövzu şəkli">
+        <img id="modalImg" src="" alt="Mövzu">
     </div>
 
     <footer>
         <p>&copy; 2024 C2026 Layihəsi. Yusf tərəfindən hazırlanmışdır.</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">GitHub Pages üzərində hostinq edilir.</p>
     </footer>
 
     <script>
-        // Konfiqurasiya
-        const SUBJECTS = {
-            'azerbaycan': { label: '🇦🇿 Azərbaycan Dili', icon: '📚' },
-            'ingilis': { label: '🇬🇧 İngilis Dili', icon: '🔤' },
-            'riyaziyyat': { label: '📐 Riyaziyyat', icon: '➗' }
+        // --- MƏNTIQ (JAVASCRIPT) ---
+        
+        const subjects = {
+            'azerbaycan': '🇦🇿 Azərbaycan Dili',
+            'ingilis': '🇬🇧 İngilis Dili',
+            'riyaziyyat': '📐 Riyaziyyat'
         };
 
         let currentSubject = 'azerbaycan';
         let dbData = {};
 
-        // Elementlər
         const navbar = document.getElementById('navbar');
-        const contentArea = document.getElementById('main-content');
+        const contentArea = document.getElementById('content-area');
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
 
-        // 1. Məlumatları Yüklə
-        async function fetchData() {
+        // 1. Məlumatları Yüklə (data.json-dan)
+        async function loadData() {
             try {
                 const response = await fetch('data.json');
-                if (!response.ok) throw new Error('data.json tapılmadı və ya oxunmadı.');
+                if (!response.ok) throw new Error('data.json tapılmadı');
                 dbData = await response.json();
                 initApp();
             } catch (error) {
-                contentArea.innerHTML = `
-                    <div class="error-msg">
-                        <strong>❌ Xəta:</strong> ${error.message}<br><br>
-                        <small>Zəhmət olmasa repository-də <code>data.json</code> faylının olduğundan və düzgün formatda olduğundan əmin olun.</small>
-                    </div>
-                `;
-                console.error(error);
+                contentArea.innerHTML = `<div class="error">❌ Xəta: ${error.message}<br><small>data.json faylının olduğunu yoxlayın.</small></div>`;
             }
         }
 
@@ -331,106 +255,97 @@
             renderContent(currentSubject);
         }
 
-        // 3. Naviqasiyanı Qur
+        // 3. Naviqasiya Düymələrini Qur
         function renderNav() {
             navbar.innerHTML = '';
-            Object.keys(SUBJECTS).forEach(key => {
+            for (const key in subjects) {
                 const btn = document.createElement('button');
                 btn.className = `nav-btn ${key === currentSubject ? 'active' : ''}`;
-                btn.textContent = SUBJECTS[key].label;
+                btn.textContent = subjects[key];
                 btn.onclick = () => switchSubject(key);
                 navbar.appendChild(btn);
-            });
+            }
         }
 
         // 4. Mövzunu Dəyiş
-        function switchSubject(subjectKey) {
-            currentSubject = subjectKey;
-            
-            // Düymələri yenilə
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.includes(SUBJECTS[subjectKey].label.split(' ')[1])) {
-                    btn.classList.add('active');
-                }
-            });
-
-            renderContent(subjectKey);
+        function switchSubject(key) {
+            currentSubject = key;
+            renderNav(); // Aktiv düyməni yenilə
+            renderContent(key);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 5. Məzmunu Render Et (Əsas Məntiq)
+        // 5. Məzmunu Ekrana Çıxar (Əsas Funksiya)
         function renderContent(subjectKey) {
             contentArea.innerHTML = '';
             const data = dbData[subjectKey];
 
             if (!data || Object.keys(data).length === 0) {
-                contentArea.innerHTML = `<div class="status-msg">Bu fənn üçün hələ məlumat əlavə edilməyib.<br><small>data.json faylını redaktə edin.</small></div>`;
+                contentArea.innerHTML = '<div class="status">Bu fənn üçün hələ məlumat əlavə edilməyib.</div>';
                 return;
             }
 
-            // Hər kateqoriya üçün dövrə
-            Object.entries(data).forEach(([category, items], index) => {
-                if (!items || items.length === 0) return; // Boş kateqoriyaları göstərmə
+            // Hər kateqoriya üzrə dövrə
+            for (const [category, items] of Object.entries(data)) {
+                if (!items || items.length === 0) continue;
 
-                const categoryBlock = document.createElement('div');
-                categoryBlock.className = 'category-block';
-                categoryBlock.style.animationDelay = `${index * 0.1}s`;
+                // Kateqoriya Başlığı
+                const catTitle = document.createElement('div');
+                catTitle.className = 'category-title';
+                // Başlığı gözəlləşdir (məs: imla_qaydalari -> Imla Qaydalari)
+                const formattedCat = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                catTitle.innerHTML = `📂 ${formattedCat}`;
+                contentArea.appendChild(catTitle);
 
-                // Kateqoriya Başlığı (İlk hərfi böyük et və _ əvəzinə boşluq qoy)
-                const formattedCategory = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                
-                let html = `<div class="category-title">${getCategoryIcon(category)} ${formattedCategory}</div>`;
-                html += `<div class="topics-grid">`;
+                // Grid Yarad
+                const grid = document.createElement('div');
+                grid.className = 'grid';
 
+                // Kartları Yarad
                 items.forEach(item => {
-                    const typeClass = `type-${item.type || 'link'}`;
-                    const typeLabel = item.type ? item.type.toUpperCase() : 'LINK';
-                    const actionText = item.type === 'image' ? '👁️ Bax' : '🔗 Keçid';
+                    const card = document.createElement('div');
+                    card.className = 'card';
                     
-                    // Klik hadisəsi
-                    const clickAction = item.type === 'image' 
-                        ? `onclick="openModal('${item.link}')"` 
-                        : `onclick="window.open('${item.link}', '_blank')" style="cursor:pointer;"`;
+                    // Tipə görə badge seç
+                    const typeClass = item.type || 'link';
+                    const typeLabel = typeClass.toUpperCase();
 
-                    html += `
-                        <div class="card" ${clickAction}>
-                            <span class="card-type-badge ${typeClass}">${typeLabel}</span>
-                            <h3>${item.title}</h3>
-                            <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
-                            <div class="card-action">
-                                ${actionText} <span>→</span>
-                            </div>
+                    // Klik hadisəsi
+                    const handleClick = () => {
+                        if (item.type === 'image') {
+                            openModal(item.link);
+                        } else {
+                            window.open(item.link, '_blank');
+                        }
+                    };
+
+                    card.onclick = handleClick;
+
+                    card.innerHTML = `
+                        <span class="badge ${typeClass}">${typeLabel}</span>
+                        <h3>${item.title}</h3>
+                        <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
+                        <div class="card-action">
+                            ${item.type === 'image' ? '👁️ Bax' : '🔗 Keçid'} <span>→</span>
                         </div>
                     `;
+                    grid.appendChild(card);
                 });
 
-                html += `</div>`;
-                categoryBlock.innerHTML = html;
-                contentArea.appendChild(categoryBlock);
-            });
+                contentArea.appendChild(grid);
+            }
         }
 
-        // Köməkçi: Kateqoriya ikonu
-        function getCategoryIcon(cat) {
-            const icons = {
-                'fonetika': '🗣️', 'imla_qaydalari': '📝', 'sintaksis': '📜', 'test_toplulari': '✅',
-                'grammar': '🔤', 'vocabulary': '📖', 'reading_writing': '✍️',
-                'cebr': '➗', 'hendese': '📐', 'trigonometriya': '📈', 'funksiyalar': '∫'
-            };
-            return icons[cat] || '📂';
-        }
-
-        // Modal Funksiyaları
+        // 6. Modal Funksiyaları
         function openModal(src) {
             modalImg.src = src;
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Scrollu bağla
         }
 
         function closeModal(e) {
             if (e.target === modal || e.target.classList.contains('modal-close')) {
-                modal.classList.remove('show');
+                modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 setTimeout(() => { modalImg.src = ''; }, 300);
             }
@@ -438,11 +353,11 @@
 
         // ESC düyməsi ilə bağlama
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal({ target: modal });
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal({target: modal});
         });
 
-        // Başlat
-        fetchData();
+        // İşə Sal
+        loadData();
     </script>
 </body>
 </html>
