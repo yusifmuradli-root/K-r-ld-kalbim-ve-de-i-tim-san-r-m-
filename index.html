@@ -3,38 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C2026 | İmtahana Hazırlıq Portalı</title>
-    <!-- Müasir Şrift -->
+    <title>C2026 | İmtahana Hazırlıq</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- Modern CSS Dəyişənləri --- */
         :root {
-            --primary: #4F46E5;       /* İndigo */
+            --primary: #4F46E5;
             --primary-hover: #4338ca;
-            --secondary: #10B981;     /* Zümrüd */
-            --bg-color: #F9FAFB;      /* Çox açıq boz */
+            --bg-color: #F9FAFB;
             --card-bg: #ffffff;
             --text-main: #1F2937;
             --text-light: #6B7280;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --radius: 12px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* --- Header --- */
         header {
             background: linear-gradient(135deg, var(--primary), #818CF8);
             color: white;
@@ -46,20 +32,9 @@
             margin-bottom: 2rem;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
-        }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* --- Naviqasiya --- */
         nav {
             display: flex;
             justify-content: center;
@@ -83,47 +58,24 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        nav button:hover {
-            transform: translateY(-2px);
-            color: var(--primary);
-        }
+        nav button:hover { transform: translateY(-2px); color: var(--primary); }
+        nav button.active { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.39); }
 
-        nav button.active {
-            background: var(--primary);
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .content-section { display: none; animation: fadeIn 0.5s; }
+        .content-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .category-header {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
             color: white;
-            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            margin: 25px 0 15px 0;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
-        /* --- Əsas Konteyner --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .content-section {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-        }
-
-        /* --- Kartlar (Grid) --- */
         .topics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -138,29 +90,12 @@
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid #E5E7EB;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            cursor: pointer;
         }
 
-        .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-
-        .topic-card h3 {
-            font-size: 1.25rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-        }
-
-        .topic-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
+        .topic-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+        .topic-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-main); }
+        .topic-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
 
         .btn-link {
             display: inline-block;
@@ -174,65 +109,33 @@
             transition: background 0.3s;
         }
 
-        .btn-link:hover {
-            background-color: var(--primary-hover);
-        }
+        .btn-link:hover { background-color: var(--primary-hover); }
 
-        /* --- README Bölməsi (Footer Üstü) --- */
-        .readme-section {
-            background: #EFF6FF; /* Açıq mavi fon */
-            border: 1px solid #BFDBFE;
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
-            color: #1E3A8A;
+        /* Modal */
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);
+            align-items: center; justify-content: center; padding: 20px;
         }
+        .modal.active { display: flex; }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 8px; }
+        .modal-close {
+            position: absolute; top: 20px; right: 30px; color: white;
+            font-size: 40px; font-weight: bold; cursor: pointer;
+        }
+        .modal-close:hover { color: var(--primary); }
 
-        .readme-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        /* Loading */
+        .loading { text-align: center; padding: 3rem; font-size: 1.2rem; color: var(--text-light); }
+        .error { background: #FEE2E2; color: #DC2626; padding: 1rem; border-radius: var(--radius); margin: 1rem 0; }
 
-        .readme-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .readme-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .readme-box ul {
-            list-style-position: inside;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        .readme-box li {
-            margin-bottom: 5px;
-        }
-
-        /* --- Footer --- */
         footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: white;
-            color: var(--text-light);
-            border-top: 1px solid #E5E7EB;
-            font-size: 0.9rem;
+            text-align: center; padding: 2rem; background-color: white;
+            color: var(--text-light); border-top: 1px solid #E5E7EB; margin-top: 3rem;
         }
 
-        /* --- Mobil Uyğunluq --- */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
-            .readme-content { grid-template-columns: 1fr; }
             nav button { width: 100%; margin-bottom: 5px; }
         }
     </style>
@@ -241,7 +144,7 @@
 
     <header>
         <h1>C2026 Hazırlıq Portalı</h1>
-        <p>Gələcək tələbələr üçün mərkəzləşdirilmiş mənbə</p>
+        <p>Bütün resurslar bir yerdə</p>
     </header>
 
     <div class="container">
@@ -251,140 +154,135 @@
             <button onclick="showSection('riyaziyyat')" id="btn-riyaziyyat">📐 Riyaziyyat</button>
         </nav>
 
-        <!-- Azərbaycan Dili -->
-        <section id="azerbaycan" class="content-section active">
-            <h2 class="section-title">Azərbaycan Dili Resursları</h2>
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <div>
-                        <h3>📚 İmla Qaydaları</h3>
-                        <p>Əsas imla qaydaları, istisnalar və nümunələr.</p>
-                    </div>
-                    <a href="LINKI_BURAYA_YAZ" class="btn-link" target="_blank">Mənbəyə Keç</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>📝 Sintaksis</h3>
-                        <p>Cümlə təhlili, söz birləşmələri və cümlə növləri.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Mənbəyə Keç</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>✅ Test Toplusları</h3>
-                        <p>Keçmiş illərin DİM testləri və izahlı həllər.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Yüklə</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- İngilis Dili -->
-        <section id="ingilis" class="content-section">
-            <h2 class="section-title">İngilis Dili Resursları</h2>
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <div>
-                        <h3>🔤 Grammar (Qrammatika)</h3>
-                        <p>Zamanlar (Tenses), Modal fellər və struktur.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>🗣️ Vocabulary (Lüğət)</h3>
-                        <p>Ən çox işlənən sözlər və idiomlar.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Öyrən</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>🎧 Listening & Reading</h3>
-                        <p>Mətn üzərində iş və dinləmə bacarıqları.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Praktika</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Riyaziyyat -->
-        <section id="riyaziyyat" class="content-section">
-            <h2 class="section-title">Riyaziyyat Resursları</h2>
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <div>
-                        <h3>➗ Ədədlər və Əməliyyatlar</h3>
-                        <p>Əsas riyazi qanunauyğunluqlar və düsturlar.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>📐 Həndəsə</h3>
-                        <p>Planimetriya və Stereometriya əsasları.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
-                </div>
-                <div class="topic-card">
-                    <div>
-                        <h3>📈 Funksiyalar</h3>
-                        <p>Triqonometriya və funksiyaların qrafikləri.</p>
-                    </div>
-                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- README / Layihə Haqqında -->
-        <div class="readme-section">
-            <h2>📘 Layihə Haqqında (C2026)</h2>
-            <div class="readme-content">
-                <div class="readme-box">
-                    <h3>🎯 Məqsəd Nədir?</h3>
-                    <p>Bu sayt 2026-cı il qəbul imtahanına hazırlaşan tələbələr üçün yaradılmışdır. Məqsədimiz bütün lazımi dərs vəsaitlərini, videodərsləri və testləri bir yerdə toplamaq və tələbələrin vaxtına qənaət etməkdir.</p>
-                </div>
-                <div class="readme-box">
-                    <h3>🚀 Necə İstifadə Etməli?</h3>
-                    <ul>
-                        <li>Yuxarıdakı menyuდან dərsini seç (Azərbaycan, İngilis, Riyaziyyat).</li>
-                        <li>Açılan kartlardan mövzunu tap.</li>
-                        <li>"Mənbəyə Keç" düyməsinə basaraq materiala daxil ol.</li>
-                        <li>Mənbələr Google Drive, YouTube və ya PDF ola bilər.</li>
-                    </ul>
-                </div>
-            </div>
-            <div style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8;">
-                <p>💡 <strong>Qeyd:</strong> Sayt <strong>GitHub Pages</strong> üzərində hostinq edilir və tamamilə pulsuzdur. Linklər işləmirsə, adminlə əlaqə saxlayın.</p>
-            </div>
+        <div id="content-area">
+            <div class="loading">⏳ Məlumatlar yüklənir...</div>
         </div>
 
+        <div class="readme-section" style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: var(--radius); padding: 2rem; margin-top: 2rem;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">📝 Necə Əlavə Etmək Olar?</h2>
+            <ol style="color: var(--text-light); line-height: 2;">
+                <li><code>data.json</code> faylını aç</li>
+                <li>Uyğun fənn və kateqoriyanı tap</li>
+                <li>Yeni mövzu əlavə et:
+                    <pre style="background: white; padding: 10px; border-radius: 8px; margin-top: 5px; overflow-x: auto;">
+{
+  "title": "Mövzu adı",
+  "description": "Qısa izahat",
+  "link": "https://link-burada",
+  "type": "image" // image, video, pdf, link
+}</pre>
+                </li>
+                <li>Save et və GitHub-a push et</li>
+                <li>5 dəqiqə sonra sayt yenilənəcək!</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg">
     </div>
 
     <footer>
-        <p>&copy; 2024 C2026 Hazırlıq Portalı. Yusf tərəfindən hazırlanmışdır.</p>
+        <p>© 2024 C2026 | Yusf tərəfindən hazırlanmışdır</p>
     </footer>
 
     <script>
-        function showSection(sectionId) {
-            // Bütün bölmələri gizlət
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+        let database = {};
+        let currentSection = 'azerbaycan';
 
-            // Bütün düymələrin aktivliyini sil
-            const buttons = document.querySelectorAll('nav button');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-            });
+        // Məlumatları yüklə
+        async function loadDatabase() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error('data.json tapılmadı');
+                database = await response.json();
+                renderSection(currentSection);
+            } catch (error) {
+                document.getElementById('content-area').innerHTML = `
+                    <div class="error">
+                        <strong>❌ Xəta:</strong> ${error.message}<br>
+                        <small>data.json faylının repositorydə olduğundan əmin olun.</small>
+                    </div>
+                `;
+            }
+        }
 
-            // Seçilən bölməni və düyməni aktiv et
-            document.getElementById(sectionId).classList.add('active');
-            document.getElementById('btn-' + sectionId).classList.add('active');
+        // Bölməni render et
+        function renderSection(section) {
+            const contentArea = document.getElementById('content-area');
+            const data = database[section];
+
+            if (!data) {
+                contentArea.innerHTML = '<div class="error">Bu fənn üçün məlumat yoxdur</div>';
+                return;
+            }
+
+            let html = '';
+            for (const [category, topics] of Object.entries(data)) {
+                html += `<div class="category-header">📚 ${category.charAt(0).toUpperCase() + category.slice(1)}</div>`;
+                html += `<div class="topics-grid">`;
+                
+                topics.forEach((topic, index) => {
+                    const typeIcon = {
+                        'image': '🖼️',
+                        'video': '🎥',
+                        'pdf': '📄',
+                        'link': '🔗'
+                    }[topic.type] || '📎';
+
+                    const onClick = topic.type === 'image' 
+                        ? `onclick="openModal('${topic.link}')"`
+                        : `onclick="window.open('${topic.link}', '_blank')" style="cursor: pointer;"`;
+
+                    html += `
+                        <div class="topic-card" ${onClick}>
+                            <h3>${typeIcon} ${topic.title}</h3>
+                            <p>${topic.description}</p>
+                            <span class="btn-link">${topic.type === 'image' ? '👁️ Bax' : '🔗 Keçid'}</span>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+            }
+
+            contentArea.innerHTML = html;
+        }
+
+        // Bölmə dəyiş
+        function showSection(section) {
+            currentSection = section;
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
             
-            // Səhifəni yuxarıya sürüşdür (opsional)
+            if (database[section]) {
+                renderSection(section);
+            }
+            
+            document.getElementById('btn-' + section).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Modal
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            document.getElementById('modalImg').src = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Başlat
+        loadDatabase();
     </script>
 </body>
 </html>
