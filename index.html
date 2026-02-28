@@ -3,88 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qəbul İmtahanına Hazırlıq</title>
+    <title>C2026 | İmtahana Hazırlıq Portalı</title>
+    <!-- Müasir Şrift -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Ümumi Dizayn (CSS) */
+        /* --- Modern CSS Dəyişənləri --- */
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #28a745;
-            --accent-color: #ffc107;
-            --dark: #343a40;
-            --light: #f8f9fa;
+            --primary: #4F46E5;       /* İndigo */
+            --primary-hover: #4338ca;
+            --secondary: #10B981;     /* Zümrüd */
+            --bg-color: #F9FAFB;      /* Çox açıq boz */
+            --card-bg: #ffffff;
+            --text-main: #1F2937;
+            --text-light: #6B7280;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* Başlıq Hissəsi */
+        /* --- Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            background: linear-gradient(135deg, var(--primary), #818CF8);
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
         }
 
         header h1 {
-            margin: 0;
             font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
+            font-weight: 300;
         }
 
-        /* Naviqasiya (Düymələr) */
+        /* --- Naviqasiya --- */
         nav {
             display: flex;
             justify-content: center;
-            background-color: white;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
         }
 
         nav button {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 1.1rem;
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
             cursor: pointer;
-            color: var(--dark);
-            font-weight: bold;
-            transition: 0.3s;
-            border-bottom: 3px solid transparent;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            font-family: 'Poppins', sans-serif;
         }
 
-        nav button:hover, nav button.active {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--primary-color);
+        nav button:hover {
+            transform: translateY(-2px);
+            color: var(--primary);
         }
 
-        /* Əsas Məzmun */
+        nav button.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+        }
+
+        /* --- Əsas Konteyner --- */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
         .content-section {
-            display: none; /* Hamısını gizlədirik, JS ilə açacağıq */
-            animation: fadeIn 0.5s;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         .content-section.active {
-            display: block; /* Aktiv olanı göstəririk */
+            display: block;
         }
 
         @keyframes fadeIn {
@@ -92,163 +115,256 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .subject-title {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
         }
 
-        /* Kartlar (Mövzular) */
+        /* --- Kartlar (Grid) --- */
         .topics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
         }
 
         .topic-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border-left: 5px solid var(--secondary-color);
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .topic-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
         }
 
         .topic-card h3 {
-            margin-top: 0;
-            color: var(--dark);
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
         }
 
-        .topic-card a {
+        .topic-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-link {
             display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: var(--primary-color);
+            text-align: center;
+            background-color: var(--primary);
             color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* --- README Bölməsi (Footer Üstü) --- */
+        .readme-section {
+            background: #EFF6FF; /* Açıq mavi fon */
+            border: 1px solid #BFDBFE;
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            color: #1E3A8A;
+        }
+
+        .readme-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .readme-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .readme-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .readme-box ul {
+            list-style-position: inside;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
-
-        .topic-card a:hover {
-            background-color: #0056b3;
+        
+        .readme-box li {
+            margin-bottom: 5px;
         }
 
+        /* --- Footer --- */
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: var(--dark);
-            color: white;
-            margin-top: 3rem;
+            background-color: white;
+            color: var(--text-light);
+            border-top: 1px solid #E5E7EB;
+            font-size: 0.9rem;
         }
 
-        /* Mobil üçün */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav button {
-                width: 100%;
-                margin: 5px 0;
-            }
+        /* --- Mobil Uyğunluq --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .readme-content { grid-template-columns: 1fr; }
+            nav button { width: 100%; margin-bottom: 5px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Qəbul İmtahanına Hazırlıq</h1>
-        <p>Bütün lazımi resurslar bir yerdə - Uğurlar!</p>
+        <h1>C2026 Hazırlıq Portalı</h1>
+        <p>Gələcək tələbələr üçün mərkəzləşdirilmiş mənbə</p>
     </header>
 
-    <nav>
-        <button onclick="showSection('azerbaycan')" class="active" id="btn-azerbaycan">Azərbaycan Dili</button>
-        <button onclick="showSection('ingilis')" id="btn-ingilis">İngilis Dili</button>
-        <button onclick="showSection('riyaziyyat')" id="btn-riyaziyyat">Riyaziyyat</button>
-    </nav>
-
     <div class="container">
-        
-        <!-- Azərbaycan Dili Bölməsi -->
+        <nav>
+            <button onclick="showSection('azerbaycan')" class="active" id="btn-azerbaycan">🇦🇿 Azərbaycan Dili</button>
+            <button onclick="showSection('ingilis')" id="btn-ingilis">🇬🇧 İngilis Dili</button>
+            <button onclick="showSection('riyaziyyat')" id="btn-riyaziyyat">📐 Riyaziyyat</button>
+        </nav>
+
+        <!-- Azərbaycan Dili -->
         <section id="azerbaycan" class="content-section active">
-            <h2 class="subject-title">Azərbaycan Dili Mənbələri</h2>
+            <h2 class="section-title">Azərbaycan Dili Resursları</h2>
             <div class="topics-grid">
-                <!-- Mövzu 1 -->
                 <div class="topic-card">
-                    <h3>İmla Qaydaları</h3>
-                    <p>Əsas imla qaydaları və nümunələr.</p>
-                    <!-- Aşağıdakı linki öz linkinlə dəyiş -->
-                    <a href="LINKI_BURAYA_YAZ" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>📚 İmla Qaydaları</h3>
+                        <p>Əsas imla qaydaları, istisnalar və nümunələr.</p>
+                    </div>
+                    <a href="LINKI_BURAYA_YAZ" class="btn-link" target="_blank">Mənbəyə Keç</a>
                 </div>
-                <!-- Mövzu 2 -->
                 <div class="topic-card">
-                    <h3>Sintaksis (Cümlə təhlili)</h3>
-                    <p>Cümlə növləri və təhlili.</p>
-                    <a href="#" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>📝 Sintaksis</h3>
+                        <p>Cümlə təhlili, söz birləşmələri və cümlə növləri.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Mənbəyə Keç</a>
                 </div>
-                <!-- Mövzu 3 -->
                 <div class="topic-card">
-                    <h3>Test Toplusları</h3>
-                    <p>Keçmiş illərin testləri.</p>
-                    <a href="#" target="_blank">Yüklə</a>
+                    <div>
+                        <h3>✅ Test Toplusları</h3>
+                        <p>Keçmiş illərin DİM testləri və izahlı həllər.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Yüklə</a>
                 </div>
             </div>
         </section>
 
-        <!-- İngilis Dili Bölməsi -->
+        <!-- İngilis Dili -->
         <section id="ingilis" class="content-section">
-            <h2 class="subject-title">İngilis Dili Mənbələri</h2>
+            <h2 class="section-title">İngilis Dili Resursları</h2>
             <div class="topics-grid">
                 <div class="topic-card">
-                    <h3>Grammar: Tenses</h3>
-                    <p>Zamanlar (Tenses) haqqında qaydalar.</p>
-                    <a href="#" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>🔤 Grammar (Qrammatika)</h3>
+                        <p>Zamanlar (Tenses), Modal fellər və struktur.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
                 </div>
                 <div class="topic-card">
-                    <h3>Vocabulary</h3>
-                    <p>Ən vacib sözlər və ifadələr.</p>
-                    <a href="#" target="_blank">Öyrən</a>
+                    <div>
+                        <h3>🗣️ Vocabulary (Lüğət)</h3>
+                        <p>Ən çox işlənən sözlər və idiomlar.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Öyrən</a>
+                </div>
+                <div class="topic-card">
+                    <div>
+                        <h3>🎧 Listening & Reading</h3>
+                        <p>Mətn üzərində iş və dinləmə bacarıqları.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Praktika</a>
                 </div>
             </div>
         </section>
 
-        <!-- Riyaziyyat Bölməsi -->
+        <!-- Riyaziyyat -->
         <section id="riyaziyyat" class="content-section">
-            <h2 class="subject-title">Riyaziyyat Mənbələri</h2>
+            <h2 class="section-title">Riyaziyyat Resursları</h2>
             <div class="topics-grid">
                 <div class="topic-card">
-                    <h3>Ədədlər və Əməliyyatlar</h3>
-                    <p>Əsas riyazi qaydalar.</p>
-                    <a href="#" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>➗ Ədədlər və Əməliyyatlar</h3>
+                        <p>Əsas riyazi qanunauyğunluqlar və düsturlar.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
                 </div>
                 <div class="topic-card">
-                    <h3>Triqonometriya</h3>
-                    <p>Düsturlar və nümunələr.</p>
-                    <a href="#" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>📐 Həndəsə</h3>
+                        <p>Planimetriya və Stereometriya əsasları.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
                 </div>
                 <div class="topic-card">
-                    <h3>Həndəsə</h3>
-                    <p>Şəkillər və teoremlər.</p>
-                    <a href="#" target="_blank">Dərsə Keç</a>
+                    <div>
+                        <h3>📈 Funksiyalar</h3>
+                        <p>Triqonometriya və funksiyaların qrafikləri.</p>
+                    </div>
+                    <a href="#" class="btn-link" target="_blank">Dərsə Keç</a>
                 </div>
             </div>
         </section>
+
+        <!-- README / Layihə Haqqında -->
+        <div class="readme-section">
+            <h2>📘 Layihə Haqqında (C2026)</h2>
+            <div class="readme-content">
+                <div class="readme-box">
+                    <h3>🎯 Məqsəd Nədir?</h3>
+                    <p>Bu sayt 2026-cı il qəbul imtahanına hazırlaşan tələbələr üçün yaradılmışdır. Məqsədimiz bütün lazımi dərs vəsaitlərini, videodərsləri və testləri bir yerdə toplamaq və tələbələrin vaxtına qənaət etməkdir.</p>
+                </div>
+                <div class="readme-box">
+                    <h3>🚀 Necə İstifadə Etməli?</h3>
+                    <ul>
+                        <li>Yuxarıdakı menyuდან dərsini seç (Azərbaycan, İngilis, Riyaziyyat).</li>
+                        <li>Açılan kartlardan mövzunu tap.</li>
+                        <li>"Mənbəyə Keç" düyməsinə basaraq materiala daxil ol.</li>
+                        <li>Mənbələr Google Drive, YouTube və ya PDF ola bilər.</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8;">
+                <p>💡 <strong>Qeyd:</strong> Sayt <strong>GitHub Pages</strong> üzərində hostinq edilir və tamamilə pulsuzdur. Linklər işləmirsə, adminlə əlaqə saxlayın.</p>
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2024 İmtahana Hazırlıq Portalı. Bütün hüquqlar qorunur.</p>
+        <p>&copy; 2024 C2026 Hazırlıq Portalı. Yusf tərəfindən hazırlanmışdır.</p>
     </footer>
 
     <script>
-        // Bölmələri dəyişmək üçün sadə funksiya
         function showSection(sectionId) {
             // Bütün bölmələri gizlət
             const sections = document.querySelectorAll('.content-section');
@@ -262,9 +378,12 @@
                 btn.classList.remove('active');
             });
 
-            // Seçilən bölməni göstər
+            // Seçilən bölməni və düyməni aktiv et
             document.getElementById(sectionId).classList.add('active');
             document.getElementById('btn-' + sectionId).classList.add('active');
+            
+            // Səhifəni yuxarıya sürüşdür (opsional)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
