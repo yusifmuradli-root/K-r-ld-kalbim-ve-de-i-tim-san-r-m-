@@ -1,19 +1,41 @@
 {
   "azerbaycan": {
-    "fonetika": [],
-    "imla_qaydalari": [],
-    "sintaksis": [],
-    "test_toplulari": []
+    "fonetika": [
+      {
+        "title": "Söz sonunda b, c, d, g samitləri",
+        "description": "Bu samitlərin tələffüz qaydaları və istisnalar.",
+        "link": "https://i.ibb.co/w8GmHK8/S-z-sonunda-b-c-d-g-samitl-rinin-t-l-ff-z.jpg",
+        "type": "image"
+      },
+      {
+        "title": "Vurğu növləri",
+        "description": "Dinamik və statik vurğu qaydaları haqqında video dərs.",
+        "link": "https://www.youtube.com/watch?v=NUMUNE_LINKI",
+        "type": "video"
+      }
+    ],
+    "imla": [
+      {
+        "title": "Bitişik və ayrı yazılan sözlər",
+        "description": "Əsas imla qaydaları cədvəli.",
+        "link": "https://drive.google.com/Link_Burada",
+        "type": "pdf"
+      }
+    ]
   },
   "ingilis": {
-    "grammar": [],
-    "vocabulary": [],
-    "reading_writing": []
+    "grammar": [
+      {
+        "title": "Present Simple Tense",
+        "description": "İngilis dilində indiki zaman qaydaları.",
+        "link": "https://example.com/ders-linki",
+        "type": "link"
+      }
+    ],
+    "vocabulary": []
   },
   "riyaziyyat": {
     "cebr": [],
-    "hendese": [],
-    "trigonometriya": [],
-    "funksiyalar": []
+    "hendese": []
   }
 }
