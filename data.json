@@ -1,46 +1,19 @@
 {
   "azerbaycan": {
-    "fonetika": [
-      {
-        "title": "Söz sonunda b c d g samitlərinin tələffüzü",
-        "description": "Fonetika qaydası: Söz sonunda samitlərin tələffüzü",
-        "link": "https://i.ibb.co/w8GmHK8/image.jpg",
-        "type": "image"
-      },
-      {
-        "title": "Vurğu qaydaları",
-        "description": "Azərbaycan dilində vurğu növləri",
-        "link": "https://youtube.com/link",
-        "type": "video"
-      }
-    ],
-    "imla": [
-      {
-        "title": "İmla qaydaları",
-        "description": "Əsas imla qaydaları",
-        "link": "https://drive.google.com/link",
-        "type": "pdf"
-      }
-    ]
+    "fonetika": [],
+    "imla_qaydalari": [],
+    "sintaksis": [],
+    "test_toplulari": []
   },
   "ingilis": {
-    "grammar": [
-      {
-        "title": "Tenses (Zamanlar)",
-        "description": "İngilis dilində zamanlar",
-        "link": "https://youtube.com/link",
-        "type": "video"
-      }
-    ]
+    "grammar": [],
+    "vocabulary": [],
+    "reading_writing": []
   },
   "riyaziyyat": {
-    "cebr": [
-      {
-        "title": "Düsturlar",
-        "description": "Qısa vurma düsturları",
-        "link": "https://example.com",
-        "type": "link"
-      }
-    ]
+    "cebr": [],
+    "hendese": [],
+    "trigonometriya": [],
+    "funksiyalar": []
   }
 }
