@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qəbul İmtahanına Hazırlıq</title>
+    <style>
+        /* Ümumi Dizayn (CSS) */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --accent-color: #ffc107;
+            --dark: #343a40;
+            --light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Başlıq Hissəsi */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Naviqasiya (Düymələr) */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--dark);
+            font-weight: bold;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav button:hover, nav button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* Əsas Məzmun */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            display: none; /* Hamısını gizlədirik, JS ilə açacağıq */
+            animation: fadeIn 0.5s;
+        }
+
+        .content-section.active {
+            display: block; /* Aktiv olanı göstəririk */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .subject-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Kartlar (Mövzular) */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .topic-card h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+
+        .topic-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .topic-card a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        /* Mobil üçün */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Qəbul İmtahanına Hazırlıq</h1>
+        <p>Bütün lazımi resurslar bir yerdə - Uğurlar!</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('azerbaycan')" class="active" id="btn-azerbaycan">Azərbaycan Dili</button>
+        <button onclick="showSection('ingilis')" id="btn-ingilis">İngilis Dili</button>
+        <button onclick="showSection('riyaziyyat')" id="btn-riyaziyyat">Riyaziyyat</button>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Azərbaycan Dili Bölməsi -->
+        <section id="azerbaycan" class="content-section active">
+            <h2 class="subject-title">Azərbaycan Dili Mənbələri</h2>
+            <div class="topics-grid">
+                <!-- Mövzu 1 -->
+                <div class="topic-card">
+                    <h3>İmla Qaydaları</h3>
+                    <p>Əsas imla qaydaları və nümunələr.</p>
+                    <!-- Aşağıdakı linki öz linkinlə dəyiş -->
+                    <a href="LINKI_BURAYA_YAZ" target="_blank">Dərsə Keç</a>
+                </div>
+                <!-- Mövzu 2 -->
+                <div class="topic-card">
+                    <h3>Sintaksis (Cümlə təhlili)</h3>
+                    <p>Cümlə növləri və təhlili.</p>
+                    <a href="#" target="_blank">Dərsə Keç</a>
+                </div>
+                <!-- Mövzu 3 -->
+                <div class="topic-card">
+                    <h3>Test Toplusları</h3>
+                    <p>Keçmiş illərin testləri.</p>
+                    <a href="#" target="_blank">Yüklə</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- İngilis Dili Bölməsi -->
+        <section id="ingilis" class="content-section">
+            <h2 class="subject-title">İngilis Dili Mənbələri</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>Grammar: Tenses</h3>
+                    <p>Zamanlar (Tenses) haqqında qaydalar.</p>
+                    <a href="#" target="_blank">Dərsə Keç</a>
+                </div>
+                <div class="topic-card">
+                    <h3>Vocabulary</h3>
+                    <p>Ən vacib sözlər və ifadələr.</p>
+                    <a href="#" target="_blank">Öyrən</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Riyaziyyat Bölməsi -->
+        <section id="riyaziyyat" class="content-section">
+            <h2 class="subject-title">Riyaziyyat Mənbələri</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>Ədədlər və Əməliyyatlar</h3>
+                    <p>Əsas riyazi qaydalar.</p>
+                    <a href="#" target="_blank">Dərsə Keç</a>
+                </div>
+                <div class="topic-card">
+                    <h3>Triqonometriya</h3>
+                    <p>Düsturlar və nümunələr.</p>
+                    <a href="#" target="_blank">Dərsə Keç</a>
+                </div>
+                <div class="topic-card">
+                    <h3>Həndəsə</h3>
+                    <p>Şəkillər və teoremlər.</p>
+                    <a href="#" target="_blank">Dərsə Keç</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 İmtahana Hazırlıq Portalı. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script>
+        // Bölmələri dəyişmək üçün sadə funksiya
+        function showSection(sectionId) {
+            // Bütün bölmələri gizlət
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Bütün düymələrin aktivliyini sil
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Seçilən bölməni göstər
+            document.getElementById(sectionId).classList.add('active');
+            document.getElementById('btn-' + sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
