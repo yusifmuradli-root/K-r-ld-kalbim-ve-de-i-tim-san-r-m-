@@ -2,21 +2,416 @@
   "azerbaycan": {
     "fonetika": [
       {
+        "title": "Danışıq səsləri və saitlərin növləri",
+        "description": "Qalın, incə; açıq, qapalı; dodaqlanan, dodaqlanmayan saitlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Samitlərin növləri",
+        "description": "Kar və cingiltili samitlər, onların fərqləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sözün hərf və səs tərkibi",
+        "description": "Hərf və səs fərqi, təhlil qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "O saitinin [a] kimi tələffüzü",
+        "description": "Bir sıra sözlərdə o saitinin a kimi tələffüz qaydası.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Saitlərin uzun tələffüzü",
+        "description": "Uzun saitlərin yazılışı və tələffüzü.",
+        "link": "#",
+        "type": "link"
+      },
+      {
         "title": "Söz sonunda b, c, d, g samitləri",
-        "description": "Bu samitlərin tələffüz qaydaları və istisnalar.",
+        "description": "Bu samitlərin tələffüz qaydası və istisnalar.",
         "link": "https://i.ibb.co/w8GmHK8/S-z-sonunda-b-c-d-g-samitl-rinin-t-l-ff-z.jpg",
         "type": "image"
+      },
+      {
+        "title": "K və Q samitlərinin yazılışı",
+        "description": "K və q samitlərinin tələffüz və yazılış fərqləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Qoşa samitlər",
+        "description": "Təkhecalı sözlərdə qoşa samitlər və tələffüz qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Ahəng qanunu",
+        "description": "Sait və samit ahəngi qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Fonetik təhlil",
+        "description": "Sözün yazılışı və deyilişinə görə təhlili.",
+        "link": "#",
+        "type": "link"
       }
     ],
-    "imla": [],
-    "sintaksis": []
+    "leksika": [
+      {
+        "title": "Sözün leksik və qrammatik mənası",
+        "description": "Leksik məna, qrammatik məna və fərqləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sözün həqiqi və məcazi mənası",
+        "description": "İlkin məna və məcazi məna nümunələri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Çoxmənalı sözlər",
+        "description": "Bir sözün bir neçə məna daşıması.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Omonimlər",
+        "description": "Yazılışı və tələffüzü eyni, mənası fərqli sözlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sinonimlər və Antonimlər",
+        "description": "Mənası yaxın və əks olan sözlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Frazeoloji birləşmələr",
+        "description": "Sabit söz birləşmələri və məcazi mənaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Terminlər",
+        "description": "Elm və texnika sahələrinə aid xüsusi sözlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Leksik təhlil",
+        "description": "Sözün leksik xüsusiyyətlərinə görə təhlili.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "sozun_terkibi": [
+      {
+        "title": "Kök və şəkilçi",
+        "description": "Sözün əsas hissəsi və qoşulan şəkilçilər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Şəkilçi növləri",
+        "description": "Leksik və qrammatik şəkilçilər, variantlar.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Bitişdirici samitlər",
+        "description": "n, y, s samitlərinin birləşdirici funksiyası.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Söz yaradıcılığı",
+        "description": "Yeni sözlərin yaranma yolları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sadə və düzəltmə sözlər",
+        "description": "Quruluşca sadə və şəkilçi ilə düzələn sözlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Mürəkkəb sözlər",
+        "description": "Bitişik, defislə və ayrı yazılan mürəkkəb sözlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Eyniköklü sözlər",
+        "description": "Eyni kökdən yaranan söz qrupları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sözün tərkibinə görə təhlili",
+        "description": "Morfem təhlili qaydaları.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "morfologiya": [
+      {
+        "title": "İsim: Növləri və xüsusiyyətləri",
+        "description": "Konkret/mücərrəd, ümumi/xüsusi, tək/cəm isimlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "İsmin halları",
+        "description": "6 hal və qeyri-müəyyənlik bildirən hallar.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "İsmin mənsubiyyətə görə dəyişməsi",
+        "description": "Mənsubiyyət şəkilçiləri və xüsusi hallar.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sifət və dərəcələri",
+        "description": "Adi, azaltma və çoxaltma dərəcələri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Say: Növləri və yazılışı",
+        "description": "Miqdar, sıra, kəsr sayları və yazılış qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Əvəzlik növləri",
+        "description": "Şəxs, işarə, sual, qeyri-müəyyən əvəzliklər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Feil: Zamanlar və şəkillər",
+        "description": "İndiki, keçmiş, gələcək zaman; xəbər, əmr, arzu şəkilləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Feilin qrammatik məna növləri",
+        "description": "Məlum, məchul, şəxssiz, qayıdış, icbar növlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Feilin təsriflənməyən formaları",
+        "description": "Məsdər, feili sifət, feili bağlama.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Zərf: Növləri və işlənməsi",
+        "description": "Tərzi-hərəkət, zaman, yer, kəmiyyət zərfləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Köməkçi nitq hissələri",
+        "description": "Qoşma, bağlayıcı, ədat, modal söz, nida.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Nitq hissələrinin omonimliyi",
+        "description": "Əsas və köməkçi nitq hissələrinin omonimliyi.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "sintaksis": [
+      {
+        "title": "Söz birləşmələri",
+        "description": "İsmi və feili birləşmələr, əsas və asılı tərəflər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Mürəkkəb adlar",
+        "description": "Mürəkkəb adların yazılış qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sintaktik əlaqələr",
+        "description": "Tabesizlik, tabelilik, uzlaşma əlaqələri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Cümlənin baş üzvləri",
+        "description": "Mübtəda və xəbər, ifadə vasitələri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Cümlənin ikincidərəcəli üzvləri",
+        "description": "Tamamlıq, təyin, zərflik növləri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Həmcins üzvlər",
+        "description": "Həmcinslik, ümumiləşdirici sözlər, durğu işarələri.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Cümlədə söz sırası və əlavələr",
+        "description": "Söz sırası qaydaları, əlavələr, ara sözlər, xitab.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Cümlə növləri",
+        "description": "Məqsəd, intonasiya, quruluşca növlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Mürəkkəb cümlələr",
+        "description": "Tabesiz və tabeli mürəkkəb cümlələr, baş-budaq əlaqəsi.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Vasitəsiz və vasitəli nitq",
+        "description": "Dialoqlar, durğu işarələri, nitq növləri.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "durgu_isareleri": [
+      {
+        "title": "Nöqtə, sual, nida işarələri",
+        "description": "Bu işarələrin işlənmə qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Vergülün işlənməsi",
+        "description": "Vergülün cümlədə işlənmə halları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Üç nöqtə, qoşa nöqtə, dırnaqlar",
+        "description": "Bu işarələrin funksiyası və işlənməsi.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Tirənin işlənməsi",
+        "description": "Tirənin cümlədə işlənmə qaydaları.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "uslub": [
+      {
+        "title": "Funksional üslublar",
+        "description": "Bədii, elmi, publisistik, rəsmi-işgüzar, məişət üslubları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Bədii üslub",
+        "description": "Obrazlı nitq, bədii təsvir vasitələri, ellipsis.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Elmi üslub",
+        "description": "İzah, şərh, nəticə, terminlərin işlənməsi.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Publisistik üslub",
+        "description": "Yazılı və şifahi forma, xüsusiyyətlər.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Sözün üslubi funksiyaları",
+        "description": "İnformativ və poetik funksiya fərqləri.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "yazi_novleri": [
+      {
+        "title": "Xülasə yazmaq",
+        "description": "Xülasəyə verilən tələblər və qaydalar.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Tezis yazmaq",
+        "description": "Tezisin əsas xüsusiyyətləri və strukturu.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Plan tərtib etmək",
+        "description": "Mətnin hissələrinə görə plan qurma qaydaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Rabitəli yazı",
+        "description": "Mövzuya uyğun mətn hazırlama bacarığı.",
+        "link": "#",
+        "type": "link"
+      }
+    ],
+    "dil_normalari": [
+      {
+        "title": "Fonetik norma",
+        "description": "Tələffüz qaydaları və ədəbi dil normaları.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Leksik norma",
+        "description": "Söz işlətmə qaydaları və məna uyğunluğu.",
+        "link": "#",
+        "type": "link"
+      },
+      {
+        "title": "Qrammatik norma",
+        "description": "Cümlə quruluşu və nitq qaydaları.",
+        "link": "#",
+        "type": "link"
+      }
+    ]
   },
   "ingilis": {
     "grammar": [],
-    "vocabulary": []
+    "vocabulary": [],
+    "reading_writing": []
   },
   "riyaziyyat": {
     "cebr": [],
-    "hendese": []
+    "hendese": [],
+    "trigonometriya": [],
+    "funksiyalar": []
   }
 }
