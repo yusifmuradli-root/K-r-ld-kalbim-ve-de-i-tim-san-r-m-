@@ -72,52 +72,165 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; min-height: 60vh; }
         .category-title { font-size: 1.4rem; font-weight: 700; margin: 30px 0 15px; padding-left: 15px; border-left: 5px solid var(--primary); color: var(--text-dark); }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--bg-card); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.3s ease; cursor: pointer; border: 1px solid #E5E7EB; display: flex; flex-direction: column; position: relative; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary); }
-        .badge { position: absolute; top: 15px; right: 15px; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; }
+        
+        /* Kart Dizaynı - Yeni */
+        .card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
         .badge.image { background: #DBEAFE; color: #1E40AF; }
         .badge.video { background: #FEE2E2; color: #991B1B; }
         .badge.pdf { background: #DCFCE7; color: #166534; }
         .badge.link { background: #F3F4F6; color: #374151; }
-        .card h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text-dark); padding-right: 40px; }
-        .card p { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 20px; flex-grow: 1; }
-        .card-action { font-size: 0.9rem; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 5px; }
-        .card:hover .card-action { gap: 10px; transition: gap 0.3s; }
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; padding: 20px; }
-        .modal.active { display: flex; animation: fadeIn 0.3s; }
-        .modal img { max-width: 90%; max-height: 90%; border-radius: 10px; }
-        .modal-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; font-weight: bold; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .status { text-align: center; padding: 40px; color: var(--text-gray); font-size: 1.1rem; }
-        .error { color: #DC2626; background: #FEE2E2; padding: 20px; border-radius: 10px; text-align: center; border: 1px solid #FECACA; }
-        .no-results { text-align: center; padding: 40px; color: var(--text-gray); }
-        .no-results-icon { font-size: 3rem; margin-bottom: 10px; opacity: 0.5; }
-        .search-info { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; }
-        .clear-search { background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.9rem; }
-        .clear-search:hover { text-decoration: underline; }
-        
-        /* Ziyarətçi Sayacı */
-        .visitor-counter {
-            text-align: center;
-            margin: 30px auto;
-            padding: 15px;
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            padding-right: 40px;
+            cursor: pointer;
         }
-        .visitor-counter p {
+        .card h3:hover { color: var(--primary); }
+        .card p {
             font-size: 0.9rem;
             color: var(--text-gray);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
-        .visitor-counter img {
-            height: 28px;
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+        .btn-view {
+            flex: 1;
+            padding: 10px 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             cursor: pointer;
-            transition: transform 0.2s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            text-align: center;
         }
-        .visitor-counter img:hover {
-            transform: scale(1.05);
+        .btn-view:hover { background: var(--primary-hover); }
+        .btn-link {
+            flex: 1;
+            padding: 10px 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
         }
-        
+        .btn-link:hover { background: #059669; }
+        .btn-link.disabled {
+            background: #D1D5DB;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Modal - Qayda Göstərmək Üçün */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal.show .modal-content { transform: scale(1); }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-gray);
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .modal-close:hover { color: var(--primary); }
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        .modal-description {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #F9FAFB;
+            border-radius: 8px;
+        }
+        .modal-rule {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 20px;
+            background: #EFF6FF;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            white-space: pre-wrap;
+        }
+        .modal-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -131,6 +244,7 @@
         @media (max-width: 600px) {
             .search-container { flex-direction: column; }
             .random-btn { justify-content: center; }
+            .card-actions { flex-direction: column; }
         }
     </style>
 </head>
@@ -156,18 +270,15 @@
         <div class="status">⏳ Məlumatlar yüklənir...</div>
     </div>
 
-    <!-- Ziyarətçi Sayacı (Hits.se) - Sənin saytın üçün -->
-    <div class="visitor-counter">
-        <p>👁️ Sayta ümumi baxış sayı:</p>
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyusifmuradli-root.github.io%2FK-r-ld-kalbim-ve-de-i-tim-san-r-m-%2F&count_bg=%234F46E5&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=BAIXI%C5%9E&edge_flat=false" 
-             alt="Ziyarətçi sayı" 
-             title="Ümumi baxış sayı"
-             style="height: 28px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    </div>
-
-    <div id="imageModal" class="modal" onclick="closeModal(event)">
+    <!-- Modal - Qayda və Məlumat Göstərmək Üçün -->
+    <div id="infoModal" class="modal" onclick="closeModal(event)">
         <span class="modal-close" onclick="closeModal(event)">&times;</span>
-        <img id="modalImg" src="" alt="Mövzu">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-description" id="modalDescription"></div>
+            <div class="modal-rule" id="modalRule"></div>
+            <img id="modalImage" class="modal-image" style="display: none;">
+        </div>
     </div>
 
     <footer>
@@ -188,8 +299,7 @@
 
         const navbar = document.getElementById('navbar');
         const contentArea = document.getElementById('content-area');
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImg');
+        const modal = document.getElementById('infoModal');
         const searchInput = document.getElementById('searchInput');
 
         // 1. Məlumatları Yüklə
@@ -281,17 +391,17 @@
         function renderSearchResults(results, query) {
             contentArea.innerHTML = '';
             const infoPanel = document.createElement('div');
-            infoPanel.className = 'search-info';
+            infoPanel.style.cssText = 'background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;';
             infoPanel.innerHTML = `
                 <span>🔍 "<strong>${query}</strong>" üçün ${results.length} nəticə tapıldı</span>
-                <button class="clear-search" onclick="clearSearch()">Təmizlə ✕</button>
+                <button onclick="clearSearch()" style="background: none; border: none; color: var(--primary); cursor: pointer; font-weight: 600; font-size: 0.9rem;">Təmizlə ✕</button>
             `;
             contentArea.appendChild(infoPanel);
 
             if (results.length === 0) {
                 contentArea.innerHTML += `
-                    <div class="no-results">
-                        <div class="no-results-icon">😕</div>
+                    <div style="text-align: center; padding: 40px; color: var(--text-gray);">
+                        <div style="font-size: 3rem; margin-bottom: 10px; opacity: 0.5;">😕</div>
                         <h3>Heç nə tapılmadı</h3>
                         <p>Fərqli açar sözlərlə axtarış edin.</p>
                     </div>
@@ -345,94 +455,92 @@
 
             const randomIndex = Math.floor(Math.random() * allTopics.length);
             const randomTopic = allTopics[randomIndex];
+            openModal(randomTopic);
+        }
 
-            searchInput.value = `🎲 Təsadüfi seçildi: ${randomTopic.title}`;
-            searchInput.style.background = '#FEF3C7';
-            setTimeout(() => {
-                searchInput.style.background = 'white';
-            }, 500);
-
-            if (randomTopic.type === 'image') {
-                openModal(randomTopic.link);
+        // Modal Açmaq
+        function openModal(topic) {
+            document.getElementById('modalTitle').textContent = topic.title;
+            document.getElementById('modalDescription').textContent = topic.description || 'Ətraflı məlumat';
+            document.getElementById('modalRule').textContent = topic.qayda || 'Qayda məlumatı əlavə edilməyib.';
+            
+            const modalImg = document.getElementById('modalImage');
+            if (topic.type === 'image' && topic.link && topic.link !== '#') {
+                modalImg.src = topic.link;
+                modalImg.style.display = 'block';
             } else {
-                window.open(randomTopic.link, '_blank');
+                modalImg.style.display = 'none';
             }
 
-            showTopicInfo(randomTopic);
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
         }
 
-        function showTopicInfo(topic) {
-            const formattedCat = topic.category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-            
-            const infoDiv = document.createElement('div');
-            infoDiv.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: white;
-                padding: 20px 30px;
-                border-radius: 16px;
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-                z-index: 1001;
-                max-width: 90%;
-                text-align: center;
-                animation: slideUp 0.3s ease;
-            `;
-            infoDiv.innerHTML = `
-                <h3 style="margin-bottom: 8px; color: var(--primary);">${topic.title}</h3>
-                <p style="color: var(--text-gray); font-size: 0.9rem;">
-                    ${topic.subjectName} • ${formattedCat}
-                </p>
-                <button onclick="this.parentElement.remove()" style="
-                    margin-top: 10px;
-                    background: var(--primary);
-                    color: white;
-                    border: none;
-                    padding: 8px 20px;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    font-family: inherit;
-                }}">Bağla</button>
-            `;
-            
-            const oldInfo = document.querySelector('.random-topic-info');
-            if (oldInfo) oldInfo.remove();
-            
-            infoDiv.classList.add('random-topic-info');
-            document.body.appendChild(infoDiv);
-
-            setTimeout(() => {
-                if (infoDiv.parentElement) {
-                    infoDiv.style.animation = 'fadeOut 0.3s ease';
-                    setTimeout(() => infoDiv.remove(), 300);
-                }
-            }, 5000);
+        function closeModal(e) {
+            if (e.target === modal || e.target.classList.contains('modal-close')) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
         }
 
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal({target: modal});
+            }
+        });
+
+        // Kart Yaratmaq
         function createCard(item) {
             const card = document.createElement('div');
             card.className = 'card';
             const typeClass = item.type || 'link';
             const typeLabel = typeClass.toUpperCase();
 
-            const handleClick = () => {
-                if (item.type === 'image') {
-                    openModal(item.link);
-                } else {
-                    window.open(item.link, '_blank');
-                }
-            };
+            // Başlığa klikləyəndə modal açılsın
+            const title = document.createElement('h3');
+            title.textContent = item.title;
+            title.onclick = () => openModal(item);
+            title.style.cursor = 'pointer';
 
-            card.onclick = handleClick;
-            card.innerHTML = `
-                <span class="badge ${typeClass}">${typeLabel}</span>
-                <h3>${item.title}</h3>
-                <p>${item.description || 'Ətraflı məlumat üçün klikləyin.'}</p>
-                <div class="card-action">
-                    ${item.type === 'image' ? '👁️ Bax' : '🔗 Keçid'} <span>→</span>
-                </div>
-            `;
+            const description = document.createElement('p');
+            description.textContent = item.description || 'Ətraflı məlumat üçün başlığa klikləyin.';
+
+            const badge = document.createElement('span');
+            badge.className = `badge ${typeClass}`;
+            badge.textContent = typeLabel;
+
+            const actions = document.createElement('div');
+            actions.className = 'card-actions';
+
+            // Qaydaya bax düyməsi
+            const btnView = document.createElement('button');
+            btnView.className = 'btn-view';
+            btnView.textContent = '📖 Qaydaya Bax';
+            btnView.onclick = () => openModal(item);
+
+            // Link düyməsi
+            const btnLink = document.createElement('a');
+            btnLink.className = 'btn-link';
+            btnLink.textContent = '🔗 Keçid';
+            btnLink.target = '_blank';
+            
+            if (item.link && item.link !== '#') {
+                btnLink.href = item.link;
+                btnLink.classList.remove('disabled');
+            } else {
+                btnLink.href = '#';
+                btnLink.classList.add('disabled');
+                btnLink.textContent = '🔗 Tezliklə';
+            }
+
+            actions.appendChild(btnView);
+            actions.appendChild(btnLink);
+
+            card.appendChild(badge);
+            card.appendChild(title);
+            card.appendChild(description);
+            card.appendChild(actions);
+
             return card;
         }
 
@@ -465,47 +573,6 @@
                 contentArea.appendChild(grid);
             }
         }
-
-        function openModal(src) {
-            modalImg.src = src;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(e) {
-            if (e.target === modal || e.target.classList.contains('modal-close')) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                setTimeout(() => { modalImg.src = ''; }, 300);
-            }
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (modal.classList.contains('active')) {
-                    closeModal({target: modal});
-                } else if (searchInput.value !== '') {
-                    clearSearch();
-                }
-            }
-            if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
-                e.preventDefault();
-                showRandomTopic();
-            }
-        });
-
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideUp {
-                from { transform: translateX(-50%) translateY(20px); opacity: 0; }
-                to { transform: translateX(-50%) translateY(0); opacity: 1; }
-            }
-            @keyframes fadeOut {
-                from { opacity: 1; }
-                to { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
 
         // İşə Sal
         loadData();
