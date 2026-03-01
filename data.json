@@ -1,481 +1,604 @@
 {
-  "azerbaycan": {
-    "fonetika": [
-      {
-        "title": "Danışıq səsləri və saitlərin növləri",
-        "description": "Qalın, incə; açıq, qapalı; dodaqlanan, dodaqlanmayan saitlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Danışıq səsləri iki cür olur: 1) sait səslər, 2) samit səslər. Saitlərin tələffüzündə hava axını ağızdan sərbəst çıxır. Saitlər növləri: 1. Dilin arxa və ön hissəsində deyilməsinə görə: qalın saitlər([a],[ı],[o],[u]); incə saitlər([ə],[e],[ö],[i],[ü]). 2. Dodaqların vəziyyətinə görə: dodaqlanan saitlər([o],[ö],[u],[ü]); dodaqlanmayan saitlər([a],[ə],[e],[ı],[i]). 3. Dilin üst damağa doğru qalxması və enməsi vəziyyətinə görə: qapalı saitlər([ı],[i],[u],[ü]); açıq saitlər([a],[ə],[o],[ö],[e])."
+  "fənnlər": {
+    "azerbaycan_dili": {
+      "fonetika": {
+        "danisiq_sesleri": {
+          "saitler": {
+            "qalin": ["a", "ı", "o", "u"],
+            "ince": ["ə", "e", "i", "ö", "ü"],
+            "dodaqlanan": ["o", "ö", "u", "ü"],
+            "dodaqlanmayan": ["a", "ə", "e", "ı", "i"],
+            "aciq": ["a", "ə", "e", "o", "ö"],
+            "qapali": ["ı", "i", "u", "ü"]
+          },
+          "samitler": {
+            "cingiltili": ["b", "c", "d", "g", "ğ", "j", "l", "m", "n", "r", "v", "y", "z"],
+            "kar": ["p", "ç", "t", "k", "x", "ş", "f", "h", "s", "q"]
+          },
+          "aheng_qanunu": "Sözdə qalın və incə saitlərin bir-birini izləməsi",
+          "heca": "Tələffüz zamanı sözlərin asanlıqla bölünən hissələri",
+          "vurgu": "Sözdəki hecalardan birinin qüvvətli tələffüzü"
+        },
+        "fonetik_tehsil": ["Sözün səs və hərf tərkibi", "Hecalar və vurğu", "Sait/samit təhlili"]
       },
-      {
-        "title": "Samitlərin növləri",
-        "description": "Kar və cingiltili samitlər, onların fərqləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Samit səslər cingiltili və kar olur. Cingiltili samitlərin əmələ gəlməsində səs telləri iştirak edir: [b][c][d][g][ğ][j][l][m][n][r][v][y][z]. Kar samitlər yalnız küydən əmələ gəlir: [ç][f][h][k][p][q][s][ş][t][x]. Cingiltili və kar samitlərin çoxu cütlük təşkil edir."
+      "leksika": {
+        "sozun_menasi": {
+          "leksik": "Sözün ifadə etdiyi məna",
+          "grammatik": "Sözün nitq hissəsinə aid xüsusiyyətləri"
+        },
+        "menalar": {
+          "heqiqi": "Sözün ilkin, birbaşa mənası",
+          "mecazi": "Sözün köçürülmüş, obrazlı mənası"
+        },
+        "soz_novleri": {
+          "tekmenali": "Yalnız bir mənası olan sözlər",
+          "coxmenali": "Bir neçə yaxın mənası olan sözlər",
+          "omonimler": "Yazılışı eyni, mənası fərqli sözlər",
+          "sinonimler": "Mənası yaxın, yazılışı fərqli sözlər",
+          "antonimler": "Mənası əks olan sözlər"
+        },
+        "frazeologiya": "Sabit söz birləşmələri (məs: əlindən gəlmək, gözünü açmaq)",
+        "terminler": "Elm və texnika sahələrinə aid xüsusi sözlər"
       },
-      {
-        "title": "Sözün hərf və səs tərkibi",
-        "description": "Hərf və səs fərqi, təhlil qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Hərflərlə səslər fərqli anlayışlardır. Hərfləri yazırıq və görürük, səsləri tələffüz edirik və eşidirik. Azərbaycan əlifbasında 32 hərf var. Hərflərdən 9-u sait, 23-ü isə samit səsi bildirir. Fonem - sözün mənasını dəyişən səsdir."
+      "sozun_terkibi": {
+        "kok": "Sözün məna daşıyan əsas hissəsi",
+        "sekilci": {
+          "leksik": "Yeni söz yaradan şəkilçilər",
+          "grammatik": "Sözün formasını dəyişən şəkilçilər"
+        },
+        "soz_yaradiciligi": {
+          "sade": "Yalnız kök və ya kök+qrammatik şəkilçi",
+          "duzeltme": "Kök+leksik şəkilçi ilə yaranan sözlər",
+          "murekkeb": "İki və daha çox sözün birləşməsi"
+        }
       },
-      {
-        "title": "O saitinin [a] kimi tələffüzü",
-        "description": "Bir sıra sözlərdə o saitinin a kimi tələffüz qaydası.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Bir sıra sözlərdə o saitinin tələffüzü a kimi olur. Məsələn: 'doğru' [dağru], 'qonşu' [qanşu]. Bu, orfoepik norma ilə bağlıdır."
+      "morfoloji": {
+        "isim": {
+          "novleri": ["ümumi", "xüsusi", "konkret", "mücərrəd", "toplu"],
+          "tek_cem": "Tək: kitab, Cəm: kitab-lar",
+          "hallar": {
+            "adliq": "kim?, nə?, hara?",
+            "yiyelik": "kimin?, nəyin?",
+            "yonluk": "kimə?, nəyə?",
+            "tesirlik": "kimi?, nəyi?",
+            "yerlik": "kimdə?, nədə?",
+            "cixisliq": "kimdən?, nədən?"
+          },
+          "mensubiyyet": ["-ım", "-ın", "-ı", "-ımız", "-ınız", "-ları"]
+        },
+        "sifet": {
+          "dereceler": {
+            "adi": "gözəl",
+            "azaltma": "gözəlimtəl, açıq-gözəl",
+            "coxaltma": "göz-gözəl, qıp-qırmızı"
+          }
+        },
+        "say": {
+          "miqdar": ["bir", "iki", "üç", "on", "yüz"],
+          "sira": ["birinci", "ikinci", "üçüncü"],
+          "kesr": ["üçdə iki", "bir tam onda beş"]
+        },
+        "feil": {
+          "zamanlar": {
+            "indiki": "-ır/-ir/-ur/-ür",
+            "kecmis": {"suhudi": "-dı/-di", "negli": "-mış/-miş"},
+            "gelecek": {"qeti": "-acaq/-əcək", "qeyri-qeti": "-ar/-ər"}
+          },
+          "sekiller": ["xəbər", "əmr", "arzu", "vacib", "lazım", "şərt"],
+          "novler": ["məlum", "məchul", "qayıdış", "qarşılıq", "icbar"]
+        },
+        "zerf": {
+          "novleri": ["tərzi-hərəkət", "zaman", "yer", "kəmiyyət", "səbəb", "məqsəd"]
+        },
+        "komekci_nitq": {
+          "qosma": ["üçün", "kimi", "ilə", "gibi", "qədər"],
+          "baglayici": ["və", "amma", "çünki", "əgər", "ki"],
+          "edat": ["yalnız", "lap", "axı", "bəli", "yox"],
+          "modal": ["əlbəttə", "bəlkə", "demək", "məncə"],
+          "nida": ["ay", "ey", "vah", "paho", "əhsən"]
+        }
       },
-      {
-        "title": "Saitlərin uzun tələffüzü",
-        "description": "Uzun saitlərin yazılışı və tələffüzü.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Eynicinsli qoşa saitlər bir uzun sait kimi tələffüz olunur: saat[sa:t], təəssüf[tə:ssüf], bədii[bədi:]. Müxtəlifcinsli qoşa saitlərin arasına [y] səsi daxil olur: radio[radiyo], ailə[ayilə], zəif[zəyif]."
+      "sintaksis": {
+        "cumle_uzvleri": {
+          "bas": {
+            "mubteda": "Haqqında danışılan şəxs/əşya",
+            "xeber": "Mübtəda haqqında məlumat verən üzv"
+          },
+          "ikinci_dereceli": {
+            "tamamliq": "Hərəkətin obyekti",
+            "teyin": "İsimləri müxtəlif cəhətdən izah edən üzv",
+            "zerflik": "Hərəkəti müxtəlif cəhətdən izah edən üzv"
+          }
+        },
+        "cumle_novleri": {
+          "meksede_gore": ["nəqli", "sual", "əmr", "nida"],
+          "sexse_gore": ["müəyyən şəxsli", "qeyri-müəyyən şəxsli", "ümumi şəxsli", "şəxssiz", "adlıq"],
+          "qurulusca": ["sadə", "mürəkkəb"]
+        },
+        "murekkeb_cumle": {
+          "tabesiz": "Bərabərhüquqlu sadə cümlələrin birləşməsi",
+          "tabeli": {
+            "bas_cumle": "Müstəqil hissə",
+            "budaq_cumleler": ["tamamlıq", "təyin", "zaman", "səbəb", "məqsəd", "şərt", "güzəşt"]
+          }
+        }
       },
-      {
-        "title": "Söz sonunda b, c, d, g samitləri",
-        "description": "Bu samitlərin tələffüz qaydası və istisnalar.",
-        "link": "https://i.ibb.co/w8GmHK8/S-z-sonunda-b-c-d-g-samitl-rinin-t-l-ff-z.jpg",
-        "type": "image",
-        "qayda": "Söz sonunda b, d, g samitləri tələffüzdə p, t, k kimi tələffüz olunur: palıd[palıt], tüfəng[tüfənk], ağac[ağaç], qonaq[qonaq], çiçək[çiçəx]. Lakin yazıda orijinal formada qalır. Düzgün yazılışı yoxlamaq üçün saitle başlayan şəkilçi artırmaq lazımdır: palıd-a, tüfəng-ə, ağac-a."
+      "uslub": {
+        "bedii": "Obrazlılıq, emosionallıq, poetik funksiyalar",
+        "elmi": "Məntiqilik, ardıcıllıq, terminologiya",
+        "publisistik": "Aydınlıq, kütləvilik, təsirli dil",
+        "resmi-isquzar": "Standart formalar, yığcamlıq, rəsmilik",
+        "meiset": "Təbii, sərbəst danışıq dili"
       },
-      {
-        "title": "K və Q samitlərinin yazılışı",
-        "description": "K və q samitlərinin tələffüz və yazılış fərqləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "K samiti söz ortasında istənilən samit gələrsə, tələffüzdə k=x' olur: məktəb[məx'təb], məktəbli[məx'təbli]. Q samitindən sonra kar samit gələrsə, q səsi dəyişir, cingiltili samit gələrsə, dəyişmir: iqtisadiyyat[ik'tisadiyyat], istiqlaliyyət[istiğla:liyyət]."
-      },
-      {
-        "title": "Qoşa samitlər",
-        "description": "Təkhecalı sözlərdə qoşa samitlər və tələffüz qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Söz ortasında qq, pp, tt, kk samitləri yanaşı gələrsə, tələffüz zamanı onlardan biri dəyişir: doqquz[dok'quz], tappıntı[tapbıntı], həttə[hət'də], səkkiz[sək'giz]. Şəkilçinin tərkibində gələn qoşa yy samitlərindən biri tələffüz zamanı düşür: ədəbiyyat-[ədəbiyat], fəxriyyə-[fəxriyə], cəmiyyət-[cəmiyət]."
-      },
-      {
-        "title": "Ahəng qanunu",
-        "description": "Sait və samit ahəngi qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sözdə qalın və ya incə saitlərin bir-birini izləməsinə ahəng qanunu deyilir. Ahəng qanunu morfonoloji hadisədir, yəni həm fonetikaya, həm də morfolojiyaya aiddir. Məsələn: 'qalın', 'incə', 'qanun' ahəng qanununa tabe olur; 'ahəng' isə tabe olmur."
-      },
-      {
-        "title": "Fonetik təhlil",
-        "description": "Sözün yazılışı və deyilişinə görə təhlili.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Fonetik təhlil zamanı müəyyənlaşdirilir: 1) Sözün səs və hərf tərkibi; 2) Sözün hecaları və vurğusu; 3) Sait səslər(qalın, incə; dodaqlanan, dodaqlanmayan; açıq, qapalı); 4) Samit səslər(kar, cingiltili). Qeyd: Təhlil zamanı hərf, ahəng, heca, vurğu yazılışa; səs, sait, samit isə oxunuşa əsasən müəyyən olunur."
+      "dil_qaydalari": {
+        "fonetik_norma": "Orfoqrafiya və orfoepiya qaydaları",
+        "leksik_norma": "Sözlərin mənasına bələd olmaq, yerində işlətmək",
+        "qrammatik_norma": "Sözlərin düzgün əlaqələndirilməsi",
+        "durqu_isareleri": ["nöqtə", "sual", "nida", "vergül", "tire", "dırnaq", "iki nöqtə"]
       }
-    ],
-    "leksika": [
-      {
-        "title": "Sözün leksik və qrammatik mənası",
-        "description": "Leksik məna, qrammatik məna və fərqləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sözün ifadə etdiyi məna onun leksik mənasıdır. Yəni həmin sözü deyərkən nəyi başa düşməyimizdir. Sözün qrammatik mənası da olur. Qrammatik məna sözün hansı nitq hissəsinə aid olması və həmin nitq hissəsinə aid xüsusiyyətləri daşımasıdır. 'İzin' sözü: icazə almaq - leksik mənası, isim və adlıq halda olması - qrammatik mənasıdır."
+    },
+    "riyaziyyat": {
+      "heqiqi_ededler": {
+        "natural_ededler": "1, 2, 3, ... (sayma ədədləri)",
+        "eded_emelleri": {
+          "toplama": "a + b = c",
+          "cixma": "a - b = c",
+          "vurma": "a × b = c",
+          "bolme": "a ÷ b = c"
+        },
+        "bolunme_emelleri": {
+          "tam_bolme": "qalıqsız bölünmə",
+          "qaliqli_bolme": "a = b×q + r",
+          "bolunme_emalleri": ["2-yə", "3-ə", "5-ə", "9-a", "10-a bölünmə"]
+        },
+        "sadə_murekkeb": {
+          "sade": "Yalnız 1-ə və özünə bölünən ədədlər",
+          "murekkeb": "2-dən çox böləni olan ədədlər"
+        },
+        "ekob_ekob": {
+          "ƏBOB": "Ən böyük ortaq bölən",
+          "ƏKOB": "Ən kiçik ortaq bölünən"
+        },
+        "kesrler": {
+          "adi": {
+            "duzgun": "Surət < məxrəc",
+            "duzgun_olmayan": "Surət ≥ məxrəc",
+            "esas_xasse": "Kəsri ixtisar etmək və genişləndirmək"
+          },
+          "onluq": {
+            "tam_hisse": "Vergüldən əvvəlki hissə",
+            "kesr_hisse": "Vergüldən sonrakı hissə",
+            "dovri": "Təkrarlanan rəqəm/qrup"
+          }
+        },
+        "menfi_ededler": {
+          "eks_eded": "a və -a cəmi 0 olan ədədlər",
+          "modul": "|a| = a (a≥0), |a| = -a (a<0)",
+          "rasional": "p/q formasında yazıla bilən ədədlər",
+          "irrasional": "Kəsr şəklində yazıla bilməyən ədədlər (√2, π)"
+        }
       },
-      {
-        "title": "Sözün həqiqi və məcazi mənası",
-        "description": "İlkin məna və məcazi məna nümunələri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Söz tələffüz edilərkən ağla gələn ilk məna həqiqi mənadır. İnsanlara məxsus müəyyən hərəkətləri cansız əşyalara aid etmək nəticəsində meydana çıxan məna isə məcazi mənadır: insanın ayağı(həqiqi) - kəndin ayağı(məcazi); insanın qolu(həqiqi) - çayın qolu(məcazi); uşaq yatdı(həqiqi) - külək yatdı(məcazi)."
+      "kompleks_ededler": {
+        "terif": "z = a + bi, burada i² = -1",
+        "qosma": "z = a+bi üçün qoşma: z̄ = a-bi",
+        "emeller": {
+          "toplama": "(a+bi) + (c+di) = (a+c) + (b+d)i",
+          "vurma": "(a+bi)(c+di) = (ac-bd) + (ad+bc)i",
+          "bolme": "(a+bi)/(c+di) = [(ac+bd)+(bc-ad)i]/(c²+d²)"
+        }
       },
-      {
-        "title": "Çoxmənalı sözlər",
-        "description": "Bir sözün bir neçə məna daşıması.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Eyni leksik məna ilə bağlı bir-birinə yaxın müxtəlif mənaları bildirən sözlərə çoxmənalı sözlər deyilir: qapının ağzı, yolun ağzı. Çoxmənalı sözlər bir-birinə oxşar əşyaları, yaxud oxşar əlamət və hərəkəti bildirir. Yalnız bir leksik mənası olan sözlərə tək mənalı sözlər deyilir: təyyarə, avtobus."
+      "nisbet_tenasiub_faiz": {
+        "nisbet": "a:b və ya a/b",
+        "tenasiub": "a:b = c:d → ad = bc",
+        "duz_mutenasib": "y = kx",
+        "ters_mutenasib": "y = k/x",
+        "faiz": {
+          "terif": "1% = 1/100 = 0.01",
+          "ededin_faizi": "A-nın p% = A×p/100",
+          "faizine_gore_eded": "B ədədin p% = A → A = B×100/p"
+        }
       },
-      {
-        "title": "Omonimlər",
-        "description": "Yazılışı və tələffüzü eyni, mənası fərqli sözlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Deyilişi və yazılışı eyni olan, lakin leksik mənalarına görə tamamilə fərqlənən sözlərə omonimlər deyilir. Omonimlər həm eyni, həm də müxtəlif nitq hissələri ola bilər. Eyni nitq hissəsi: bağ(isim, isim). Müxtəlif nitq hissəsi: yol(isim, fel). Bir neçə nitq hissəsi: sarı(sifət, fel, qoşma). Həm çoxmənalı, həm də omonim olan sözlər: burun, boğaz, yar, say, al, at, inci, quru, ağı, kök, dil, tut, bel, yay, qaş, qol, dolu, yol, düz..."
+      "rasional_ifadeler": {
+        "qavvet": {
+          "natural_ustlu": "aⁿ = a×a×...×a (n dəfə)",
+          "xasseler": [
+            "aᵐ × aⁿ = aᵐ⁺ⁿ",
+            "aᵐ ÷ aⁿ = aᵐ⁻ⁿ",
+            "(aᵐ)ⁿ = aᵐⁿ",
+            "(ab)ⁿ = aⁿbⁿ",
+            "(a/b)ⁿ = aⁿ/bⁿ"
+          ]
+        },
+        "birhedli_coxhedli": {
+          "birhedli": "Standart şəkil: k×xⁿ",
+          "coxhedli": "Birhədlilərin cəmi",
+          "emeller": ["toplama", "çıxma", "vurma", "bölünmə"]
+        },
+        "muxteser_vurma": [
+          "(a+b)² = a² + 2ab + b²",
+          "(a-b)² = a² - 2ab + b²",
+          "(a+b)(a-b) = a² - b²",
+          "(a+b)³ = a³ + 3a²b + 3ab² + b³",
+          "(a-b)³ = a³ - 3a²b + 3ab² - b³",
+          "a³ + b³ = (a+b)(a²-ab+b²)",
+          "a³ - b³ = (a-b)(a²+ab+b²)"
+        ]
       },
-      {
-        "title": "Sinonimlər və Antonimlər",
-        "description": "Mənası yaxın və əks olan sözlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sinonimlər: Yazılışı və deyilişi müxtəlif olan, lakin eyni və ya yaxın mənaları bildirən sözlərə sinonimlər deyilir. Sinonimləri təşkil edən sözlər eyni bir nitq hissəsinə aid olur. Məsələn: 1) İsim: eynək, çeşmək, gözlük; qovun, yemiş. 2) Sifət: qəşəng, gözəl, göyçək; hündür, yüksək, uca. 3) Fel: oturmaq, əyləşmək; yatmaq, mürğüləmək, yuxulamaq. Antonimlər: Mənası bir-birinin əksi olan sözlərə antonimlər deyilir: işıq-qaranlıq(isim), arıq-kök(sifət), oyanır-yatır(fel)."
+      "kokler_ve_irrasional": {
+        "kvadrat_kok": "√a = b ↔ b² = a, b≥0",
+        "xasseler": [
+          "√(ab) = √a × √b",
+          "√(a/b) = √a / √b",
+          "(√a)² = |a|"
+        ],
+        "n-ci_dereceden_kok": "ⁿ√a = b ↔ bⁿ = a",
+        "heqiqi_ustlu": "aʳ, burada r ∈ ℝ"
       },
-      {
-        "title": "Frazeoloji birləşmələr",
-        "description": "Sabit söz birləşmələri və məcazi mənaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Nitqdə bütövlükdə müəyyən bir leksik mənanı ifadə edən sabit söz birləşmələrindən - frazeoloji birləşmələrdən də istifadə olunur. Frazeoloji birləşmələr: 1) sabit söz birləşmələridir; 2) hazır şəkildə olur; 3) bir cümlə üzvü olur, bir suala cavab verir; 4) məcazi məna daşıyır. Məsələn: qorxmaq=ürəyi ağzına gəlmək; inanmamaq=gözü su içməmək; qaçmaq=dabanına tüpürmək; yorulmaq=əldən düşmək. Frazeoloji birləşmələrin tərkibindəki ayrı-ayrı sözlər öz həqiqi mənalarını itirir."
+      "olcme_statistika": {
+        "olcu_vahidleri": ["uzunluq", "kütlə", "həcm", "zaman", "bucaq"],
+        "statistika": {
+          "median": "Sıralanmış məlumatın ortası",
+          "moda": "Ən çox təkrarlanan qiymət",
+          "orta": "Aritmetik orta = Σxᵢ/n"
+        }
       },
-      {
-        "title": "Terminlər",
-        "description": "Elm və texnika sahələrinə aid xüsusi sözlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Müxtəlif ixtisas və peşə sahələri ilə əlaqədar olan sözlərə terminlər və ya ixtisas sözləri deyilir. Məsələn: Azərbaycan dili: fonetika, samit, mübtəda; Ədəbiyyat: süjet, folklor, poema, oçerk; Biologiya: iynəyarpaqlılar, flora, subtropik; Tibb: angina, validol, qrip, pnevmoniya; Musiqi: forte(uçadan), piano(pəsindən); Riyaziyyat: tənlik. Terminlərin xarakterik xüsusiyyətləri: 1) yığcamlıq; 2) yeni söz yaratmaq qabiliyyətinə malik olmaq; 3) emosionallığın, sinoniminin, məcazilinin olmaması."
+      "coxluqlar_ve_ehtimal": {
+        "coxluq_emelleri": {
+          "birlesme": "A ∪ B",
+          "kesisme": "A ∩ B",
+          "ferq": "A \\ B"
+        },
+        "birlesmeler_nezeriyyesi": {
+          "toplama_prinsipi": "m+n üsul",
+          "vurma_prinsipi": "m×n üsul",
+          "permutasiya": "Pₙ = n!",
+          "kombinasiya": "Cₙᵏ = n!/[k!(n-k)!]"
+        },
+        "ehtimal": {
+          "hadise_novleri": ["yəqin", "mümkün olmayan", "təsadüfi"],
+          "ehtimal_dusturu": "P(A) = əlverişli hallar / mümkün hallar",
+          "toplama_qaydasi": "P(A∪B) = P(A) + P(B) - P(A∩B)",
+          "hasil_qaydasi": "P(A∩B) = P(A)×P(B|A)"
+        }
       },
-      {
-        "title": "Leksik təhlil",
-        "description": "Sözün leksik xüsusiyyətlərinə görə təhlili.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Leksik təhlil zamanı sözün leksik mənası, qrammatik mənası, həqiqi və məcazi mənası, çoxmənalılığı, omonimliyi, sinonimliyi, antonimliyi, frazeoloji birləşmələrdə işlənməsi, termin olub-olmaması müəyyən edilir."
+      "tenlikler": {
+        "birdəyisənli_xetti": "ax + b = 0 → x = -b/a",
+        "kvadrat_tenlik": {
+          "formasi": "ax² + bx + c = 0",
+          "diskriminant": "D = b² - 4ac",
+          "kokler": "x₁,₂ = (-b ± √D) / 2a",
+          "Viyet": "x₁ + x₂ = -b/a, x₁×x₂ = c/a"
+        },
+        "rasional_tenlikler": "Kəsrlərdən ibarət tənliklər",
+        "modullu_tenlikler": "|ax+b| = c → ax+b = c və ya ax+b = -c"
+      },
+      "tenlik_sistemleri": {
+        "xetti_sistem": {
+          "iki_dəyisənli": "a₁x + b₁y = c₁, a₂x + b₂y = c₂",
+          "hell_usullari": ["əvəzetmə", "toplama-çıxma", "qrif üsulu"]
+        },
+        "qarisiq_sistem": "Biri xətti, digəri kvadrat olan sistemlər"
+      },
+      "berabersizlikler": {
+        "xasseler": [
+          "a < b → a+c < b+c",
+          "a < b, c > 0 → ac < bc",
+          "a < b, c < 0 → ac > bc"
+        ],
+        "intervallar": ["(a;b)", "[a;b]", "(a;b]", "[a;b)"],
+        "intervallar_usulu": "Kök nöqtələri ilə ədəd oxunu hissələrə bölmək",
+        "kvadrat_berabersizlik": "ax²+bx+c > 0 (< 0, ≥ 0, ≤ 0)"
+      },
+      "ededi_ardicilliqlar": {
+        "limit": "lim aₙ = L",
+        "monoton": "Artan və ya azalan ardıcıllıq",
+        "ededi_silsile": {
+          "n-ci_hedd": "aₙ = a₁ + (n-1)d",
+          "ilk_n_heddin_cemi": "Sₙ = n(a₁+aₙ)/2"
+        },
+        "hendes_silsile": {
+          "n-ci_hedd": "bₙ = b₁×qⁿ⁻¹",
+          "ilk_n_heddin_cemi": "Sₙ = b₁(qⁿ-1)/(q-1)",
+          "sonsuz_azalan": "S = b₁/(1-q), |q|<1"
+        }
+      },
+      "funksiyalar": {
+        "terif": "f: X → Y, hər x∈X üçün y=f(x)∈Y",
+        "xasseler": ["təyin oblastı", "qiymətlər çoxluğu", "sıfırlar", "artma/azalma", "tək/cüt", "dövrilik"],
+        "esas_funksiyalar": {
+          "xetti": "y = kx + b",
+          "kvadrat": "y = ax² + bx + c",
+          "ters_mütənasib": "y = k/x",
+          "kvadrat_kok": "y = √x",
+          "kub_kok": "y = ³√x",
+          "qavvet": "y = xⁿ"
+        },
+        "qrafik_cevrilmeleri": [
+          "y = f(x) + b (şaquli sürüşmə)",
+          "y = f(x+a) (üfüqi sürüşmə)",
+          "y = kf(x) (şaquli dartma/sıxma)",
+          "y = f(kx) (üfüqi dartma/sıxma)",
+          "y = -f(x) (Ox oxuna nəzərən simmetriya)",
+          "y = f(-x) (Oy oxuna nəzərən simmetriya)"
+        ]
+      },
+      "triqonometriya": {
+        "bucaq_olcusu": "180° = π radian",
+        "vahid_cevre": "Mərkəzi (0,0), radiusu 1 olan çevrə",
+        "triqonometrik_funksiyalar": {
+          "sinus": "sin α = y/r",
+          "kosinus": "cos α = x/r",
+          "tangens": "tan α = sin α / cos α",
+          "kotangens": "cot α = cos α / sin α"
+        },
+        "eynilikler": [
+          "sin²α + cos²α = 1",
+          "1 + tan²α = 1/cos²α",
+          "1 + cot²α = 1/sin²α"
+        ],
+        "cevrme_dusturlari": {
+          "cem_ferq": [
+            "sin(α±β) = sinαcosβ ± cosαsinβ",
+            "cos(α±β) = cosαcosβ ∓ sinαsinβ",
+            "tan(α±β) = (tanα±tanβ)/(1∓tanαtanβ)"
+          ],
+          "ikiqat": [
+            "sin2α = 2sinαcosα",
+            "cos2α = cos²α - sin²α = 2cos²α - 1 = 1 - 2sin²α",
+            "tan2α = 2tanα/(1-tan²α)"
+          ],
+          "hasil_cevirmeler": [
+            "sinα + sinβ = 2sin[(α+β)/2]cos[(α-β)/2]",
+            "cosα + cosβ = 2cos[(α+β)/2]cos[(α-β)/2]"
+          ]
+        },
+        "ters_triqonometrik": ["arcsin", "arccos", "arctan", "arccot"]
+      },
+      "ustlu_ve_loqarifmik": {
+        "ustlu_funksiya": "y = aˣ, a>0, a≠1",
+        "loqarifm": "logₐb = c ↔ aᶜ = b",
+        "loqarifmik_xasseler": [
+          "logₐ(xy) = logₐx + logₐy",
+          "logₐ(x/y) = logₐx - logₐy",
+          "logₐ(xⁿ) = n·logₐx",
+          "logₐa = 1, logₐ1 = 0"
+        ],
+        "loqarifmik_funksiya": "y = logₐx"
+      },
+      "hedese": {
+        "sadə_fiqurlar": {
+          "noqte_duz_xett": "Əsas anlayışlar",
+          "bucaqlar": ["iti", "düz", "küt", "geniş", "qonşu", "qarşılıqlı"],
+          "paralel_xettler": "Kəsənlə əmələ gələn bucaqların xassələri",
+          "perpendikulyar": "90° bucaq əmələ gətirən düz xətlər"
+        },
+        "cevra_daire": {
+          "uzunluq": "C = 2πr",
+          "sahə": "S = πr²",
+          "qovs_uzunlugu": "l = (α/360°)×2πr",
+          "toxunan_xasseleri": "Toxunan radiusa perpendikulyardır"
+        },
+        "ucbucaqlar": {
+          "bucaqlar_cemi": "180°",
+          "Pifaqor": "a² + b² = c² (düzbucaqlı üçbucaq)",
+          "Sinuslar_teoremi": "a/sinA = b/sinB = c/sinC = 2R",
+          "Kosinuslar_teoremi": "c² = a² + b² - 2ab·cosC",
+          "sahə_dusturlari": [
+            "S = ½ab·sinC",
+            "S = √[p(p-a)(p-b)(p-c)] (Heron)",
+            "S = pr (daxilə çəkilmiş çevrə)"
+          ]
+        },
+        "dordbucaqlilar": {
+          "paraleloqram": "Əks tərəflər paralel və bərabər",
+          "duzbucaqli": "Bütün bucaqları 90°",
+          "romb": "Bütün tərəflər bərabər",
+          "kvadrat": "Bütün tərəflər bərabər, bütün bucaqlar 90°",
+          "trapesiya": "İki tərəfi paralel"
+        },
+        "fiqurlarin_sahe": {
+          "ucbucaq": "S = ½ah",
+          "paraleloqram": "S = ah",
+          "romb": "S = ½d₁d₂",
+          "trapesiya": "S = ½(a+b)h",
+          "coxbucaqli": "Triangulyasiya üsulu"
+        },
+        "koordinatlar_usulu": {
+          "mesafe_dusturu": "AB = √[(x₂-x₁)² + (y₂-y₁)²]",
+          "orta_noqte": "M = ((x₁+x₂)/2, (y₁+y₂)/2)",
+          "duz_xett_tenliyi": "y = kx + b və ya Ax + By + C = 0",
+          "cevra_tenliyi": "(x-a)² + (y-b)² = r²"
+        },
+        "vektorlar": {
+          "uzunluq": "|a| = √(x² + y²)",
+          "emeller": [
+            "a + b = (x₁+x₂, y₁+y₂)",
+            "k·a = (kx, ky)",
+            "a·b = x₁x₂ + y₁y₂ = |a||b|cosφ"
+          ]
+        },
+        "fezada": {
+          "düz_xett_müstevi": "Stereometriya aksiomları",
+          "paralellik_perpendikulyarliq": "Fəzada düz xətlər və müstəvilər",
+          "bucaqlar": "İki müstəvi, düz xətt ilə müstəvi arası bucaqlar"
+        },
+        "coxuzluler": {
+          "prizma": "V = Sₐₛₐₛ·h, S_yan = Pₐₛₐₛ·h",
+          "piramida": "V = ⅓Sₐₛₐₛ·h",
+          "kesik_piramida": "V = ⅓h(S₁ + S₂ + √(S₁S₂))"
+        },
+        "firlanma_fiqurlari": {
+          "silindr": "V = πr²h, S_yan = 2πrh",
+          "konus": "V = ⅓πr²h, S_yan = πrl",
+          "kure": "V = ⁴⁄₃πr³, S = 4πr²"
+        }
       }
-    ],
-    "sozun_terkibi": [
-      {
-        "title": "Kök və şəkilçi",
-        "description": "Sözün əsas hissəsi və qoşulan şəkilçilər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sözün mənalı hissələri kök və şəkilçidir. Kök sözün ayrıla işlənə bilən və əsas mənanı ifadə edən hissəsidir. Şəkilçi sözün ayrıla işlənə bilən və yalnız kökə qoşulmaqla müəyyən məna daşıyan hissəsidir. Azərbaycan dilində kök əvvəl, şəkilçi sonra gəlir. Şəkilçilər iki cür olur: leksik və qrammatik şəkilçilər. Leksik şəkilçilər qoşulduqları söz köklərdən yeni sözlər düzəldir: dəmir-dəmər+çi. Qrammatik şəkilçilər isə sözün ancaq formasını dəyişdirir."
+    },
+    "ingilis_dili": {
+      "phonetics": {
+        "vowels": {
+          "short": ["ɪ", "e", "æ", "ʌ", "ɒ", "ʊ", "ə"],
+          "long": ["i:", "ɑ:", "ɔ:", "u:", "ɜ:"],
+          "diphthongs": ["eɪ", "aɪ", "ɔɪ", "əʊ", "aʊ", "ɪə", "eə", "ʊə"]
+        },
+        "consonants": {
+          "voiced": ["b", "d", "g", "v", "z", "ʒ", "ð", "m", "n", "ŋ", "l", "r", "j", "w"],
+          "voiceless": ["p", "t", "k", "f", "s", "ʃ", "θ", "h", "tʃ", "tr"]
+        },
+        "stress": "Word stress and sentence stress patterns",
+        "intonation": "Rising, falling, fall-rise patterns"
       },
-      {
-        "title": "Şəkilçi növləri",
-        "description": "Leksik və qrammatik şəkilçilər, variantlar.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Şəkilçilər bir, iki və dörd cür yazılır. Leksik şəkilçilər ahəng qanununa uyğun olaraq, əsasən, iki və dörd cür yazılır. Lakin belə şəkilçilər sırasında bir cür yazılanları da var: -daş, -kar, -xana, -dar, -stan, -şünas, -zadə, -keş... Qrammatik şəkilçilər də ahəng qanununa uyğun olaraq həmişə iki və dörd cür yazılır: -lar, -lər; -dan, -dən; -ın, -in, -un, -ün; -dı, -di, -du, -dü."
+      "lexicology": {
+        "word_meaning": {
+          "denotative": "Literal/dictionary meaning",
+          "connotative": "Emotional/cultural associations"
+        },
+        "word_types": {
+          "monosemic": "Single meaning words",
+          "polysemic": "Multiple related meanings",
+          "homonyms": "Same form, different meanings",
+          "synonyms": "Similar meaning words",
+          "antonyms": "Opposite meaning words"
+        },
+        "word_formation": {
+          "affixation": {
+            "prefixes": ["un-", "re-", "dis-", "in-/im-/il-/ir-", "pre-", "post-"],
+            "suffixes": {
+              "nouns": ["-er", "-tion", "-ness", "-ity", "-ment", "-ship"],
+              "adjectives": ["-ful", "-less", "-able", "-ous", "-ish", "-y"],
+              "verbs": ["-ize", "-ify", "-ate", "-en"],
+              "adverbs": ["-ly", "-ward(s)"]
+            }
+          },
+          "compounding": "noun+noun: textbook, verb+particle: takeoff",
+          "conversion": "Zero-derivation: email (n) → email (v)"
+        },
+        "phrasal_verbs": "Verb + particle combinations: look up, give in, run out of"
       },
-      {
-        "title": "Bitişdirici samitlər",
-        "description": "n, y, s samitlərinin birləşdirici funksiyası.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Şəkilçilərin əvvəlində gələn y, n, s samitləri bitişdirici samitlər adlanır. Onlar saitlə bitən sözlərə saitlə başlayan şəkilçilər artırıldıqda işlənir: işlə-y-əcək, körpü-n-ün, xala-s-ı."
+      "morphology": {
+        "noun": {
+          "countability": ["countable", "uncountable"],
+          "number": {
+            "singular": "book",
+            "plural_rules": [
+              "Regular: +s/-es",
+              "Irregular: child→children, foot→feet",
+              "Same form: sheep, deer, fish"
+            ]
+          },
+          "case": {
+            "common": "the student",
+            "genitive": "the student's book / the students' books"
+          }
+        },
+        "article": {
+          "indefinite": "a/an - first mention, general reference",
+          "definite": "the - specific, previously mentioned, unique",
+          "zero_article": "General concepts, plural countables, uncountables"
+        },
+        "adjective": {
+          "degrees": {
+            "positive": "big",
+            "comparative": "bigger / more beautiful",
+            "superlative": "biggest / most beautiful"
+          },
+          "irregular": ["good→better→best", "bad→worse→worst", "far→farther/further→farthest/furthest"]
+        },
+        "pronoun": {
+          "personal": ["I/me", "you", "he/him", "she/her", "it", "we/us", "they/them"],
+          "possessive": ["my/mine", "your/yours", "his", "her/hers", "its", "our/ours", "their/theirs"],
+          "reflexive": ["myself", "yourself", "himself", "herself", "itself", "ourselves", "yourselves", "themselves"],
+          "demonstrative": ["this/these", "that/those"],
+          "indefinite": ["some", "any", "every", "no", "each", "either", "neither"],
+          "relative": ["who", "which", "that", "whose", "whom"]
+        },
+        "verb": {
+          "forms": ["infinitive", "past simple", "present participle", "past participle"],
+          "tenses": {
+            "simple": {
+              "present": "I work / He works",
+              "past": "I worked",
+              "future": "I will work"
+            },
+            "continuous": {
+              "present": "I am working",
+              "past": "I was working",
+              "future": "I will be working"
+            },
+            "perfect": {
+              "present": "I have worked",
+              "past": "I had worked",
+              "future": "I will have worked"
+            },
+            "perfect_continuous": {
+              "present": "I have been working",
+              "past": "I had been working"
+            }
+          },
+          "modals": {
+            "ability": ["can/could", "be able to"],
+            "permission": ["can", "may", "could"],
+            "obligation": ["must", "have to", "should", "ought to"],
+            "possibility": ["may", "might", "could"]
+          },
+          "passive_voice": "be + past participle: The book was written by him",
+          "conditionals": {
+            "zero": "If you heat ice, it melts",
+            "first": "If it rains, I will stay home",
+            "second": "If I had time, I would travel",
+            "third": "If I had studied, I would have passed"
+          }
+        },
+        "adverb": {
+          "types": ["manner", "time", "place", "frequency", "degree"],
+          "formation": "adjective + -ly: quick→quickly",
+          "comparison": "fast→faster→fastest / carefully→more carefully→most carefully"
+        },
+        "preposition": {
+          "time": ["at", "on", "in", "for", "since", "during"],
+          "place": ["at", "on", "in", "to", "into", "from", "between", "among"],
+          "other": ["by", "with", "about", "of", "for"]
+        },
+        "conjunction": {
+          "coordinating": ["and", "but", "or", "so", "yet", "for", "nor"],
+          "subordinating": ["because", "although", "if", "when", "while", "since", "unless"]
+        }
       },
-      {
-        "title": "Söz yaradıcılığı",
-        "description": "Yeni sözlərin yaranma yolları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Dildə yeni sözlər bir neçə yolla yaranır: 1) Leksik - sözlərin öz əvvəlki mənasından fərqli olan yeni məna kəsb etməsi ilə: Ay(Yerin peyki) və ay(30 gün); 2) Morfoloji - söz köklərinə leksik şəkilçilər artırmaqla; 3) Sintaktik yol - iki və daha artıq sözün birləşməsi ilə."
+      "syntax": {
+        "sentence_types": {
+          "by_purpose": ["declarative", "interrogative", "imperative", "exclamatory"],
+          "by_structure": ["simple", "compound", "complex", "compound-complex"]
+        },
+        "sentence_elements": {
+          "subject": "Who/what the sentence is about",
+          "predicate": "What the subject does/is",
+          "object": {
+            "direct": "Receives the action directly",
+            "indirect": "Receives the action indirectly"
+          },
+          "complement": "Completes the meaning of subject/object",
+          "adverbial": "Provides additional information (time, place, manner)"
+        },
+        "word_order": "SVO (Subject-Verb-Object) basic pattern",
+        "reported_speech": {
+          "statements": "He said (that) he was tired",
+          "questions": "She asked if/whether I knew the answer",
+          "commands": "He told me to wait",
+          "tense_backshift": "Present→Past, Past→Past Perfect, will→would"
+        }
       },
-      {
-        "title": "Sadə və düzəltmə sözlər",
-        "description": "Quruluşca sadə və şəkilçi ilə düzələn sözlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sadə sözlər kökdən, yaxud kök və qrammatik şəkilçilərdən ibarət olur: kitab, kitab+lar, kitab+lar+dən. Köklərə qoşularaq onlardan yeni mənalı sözlər əmələ gətirən şəkilçilər leksik şəkilçilər adlanır: məktəb+li, qış+laq, baş+la(maq). Leksik şəkilçilərlə əmələ gələn sözlərə düzəltmə sözlər deyilir."
-      },
-      {
-        "title": "Mürəkkəb sözlər",
-        "description": "Bitişik, defislə və ayrı yazılan mürəkkəb sözlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Mürəkkəb sözlər müxtəlif yollarla əmələ gəlir: 1) iki müxtəlif mənalı sözün birləşməsi ilə: baramağurdı, ayaqqabı, yarımada, suiti; 2) yaxın mənalı sözlərin birləşməsi ilə: oğul-uşaq, qoyun-quzu, qapı-pəncərə, toyuq-cücə; 3) antonim sözlərin birləşməsi ilə: gecə-gündüz, böyük-kiçik, tez-gec, az-çox; 4) eyni sözün təkrarı ilə: səhər-səhər, üz-üzə, birdən-birə, yavaş-yavaş. Yazılışına görə mürəkkəb sözlər iki cür olur: 1) bitişik yazılanlar; 2) defislə yazılanlar."
-      },
-      {
-        "title": "Eyniköklü sözlər",
-        "description": "Eyni kökdən yaranan söz qrupları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Eyni bir kökdən əmələ gələn sözlər eyniköklü sözlər adlanır. Eyniköklü sözlər düzəltmə olmaqla yanaşı, onların kökü eyni nitq hissəsi və eyni söz olmalıdır: baş-başçı, başlıq, başla(maq), başlanğıc; əl-əlcək, ələk, ələ(mək). Eyniköklü sözlərin özünə gəldikdə isə onlar həm eyni bir nitq hissəsinə, həm də müxtəlif nitq hissələrinə aid ola bilər: bağ-bağça, bağlıq, bağban(hamısı isimdir); yağ-yağlı(sifət), yağla(fel)."
-      },
-      {
-        "title": "Sözün tərkibinə görə təhlili",
-        "description": "Morfem təhlili qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sözün tərkibinə görə təhlili zamanı sözün kökü, leksik və qrammatik şəkilçiləri müəyyən edilir. Sözün başlanğıc forması əsas götürülür. Morfemika - sözlərin tərkibindən, onların quruluşundan bəhs edən bölmədir. Dilin mənalı hissələri, yəni kök, leksik və qrammatik şəkilçilər ayrı-ayrılıqda morfem adlanır."
+      "writing_skills": {
+        "paragraph_structure": ["topic sentence", "supporting details", "concluding sentence"],
+        "essay_types": ["narrative", "descriptive", "expository", "argumentative"],
+        "cohesion_devices": ["linking words", "pronoun reference", "lexical repetition", "synonyms"]
       }
-    ],
-    "morfologiya": [
-      {
-        "title": "İsim: Növləri və xüsusiyyətləri",
-        "description": "Konkret/mücərrəd, ümumi/xüsusi, tək/cəm isimlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "İsim əşyaların adlarını bildirir, kim?, nə?, hara? suallarından birinə cavab verir. Əşya dedikdə bütün varlıqlar nəzərdə tutulur. Varlıqlar isə iki cür olur: 1) konkret varlıqlar - onların gözlə görülməsi mümkündür: çörək, qapı, dağ, dəniz, iynə, duman; 2) mücərrəd varlıqlar: xəyal, yuxu, məqsəd, məna, fikir, tarix, uğur, elm. İsimlər cümlədə, əsasən, mübtəda və tamamlıq olur, həmçinin digər cümlə üzvləri də ola bilər."
-      },
-      {
-        "title": "İsmin halları",
-        "description": "6 hal və qeyri-müəyyənlik bildirən hallar.",
-        "link": "#",
-        "type": "link",
-        "qayda": "İsimlər cümlədə başqa sözlərlə əlaqəyə girərkən dəyişir və bu dəyişmə ismin hallanması adlanır. İsmin altı halı var: 1) Adlıq hal - sualları: kim?, nə?, hara? Xüsusi şəkilçisi yoxdur. 2) Yiyəlik hal - sualları: kimin?, nəyin?, haranın?, nə? Şəkilçiləri: -ın4(-nın4). Şəkilsiz də ola bilər. 3) Yönlük hal - sualları: kimə?, nəyə?, haraya? Şəkilçiləri: -a2(-ya2). 4) Təsirlik hal - sualları: kimi?, nəyi?, haranı?, nə? Şəkilçiləri: -ı4(-nı4). Şəkilsiz də ola bilər. 5) Yerlik hal - sualları: kimdə?, nədə?, harada? Şəkilçiləri: -da2. 6) Çıxışlıq hal - sualları: kimdən?, nədən?, haradan? Şəkilçiləri: -dan2."
-      },
-      {
-        "title": "İsmin mənsubiyyətə görə dəyişməsi",
-        "description": "Mənsubiyyət şəkilçiləri və xüsusi hallar.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Əşyanın hansı şəxsə mənsubluğunu(aidliyini) bildirən şəkilçilər mənsubiyyət şəkilçiləri adlanır. I və II şəxslərə aid mənsubiyyət şəkilçilərini qəbul edən isimlər əşyanın, əsasən, insana mənsubluğunu bildirir, III şəxsə aid mənsubiyyət şəkilçisini qəbul edən isim isə əşyanın təkcə insana deyil, başqa əşyalara da mənsubluğunu ifadə edə bilər: Orxanın kitab+ı, kitabın cild+i, cildin rəng+i. Qeyd: Bəzi ərəb-fars mənşəli sözlər mənsubiyyət şəkilçisi ilə [-y-] samiti vasitəsilə birləşir: mənbə, mənşə, mövqe, mənafə, tale."
-      },
-      {
-        "title": "Sifət və dərəcələri",
-        "description": "Adi, azaltma və çoxaltma dərəcələri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Ümumi qrammatik mənasına görə əşyanın əlamətini bildirən əsas nitq hissəsinə sifət deyilir. Sifət necə?, nə cür?, hansı? suallarından birinə cavab verir. Sifət həmişə ismə aid olur. Cümlədə ən çox təyin və xəbər vəzifələrində işlənir. Sifətin üç dərəcəsi var: 1. Adi dərəcə - əlamətin adi halda olduğunu bildirir: qırmızı. 2. Azaltma dərəcəsi - əlamətin adi haldan az olduğunu bildirir: qırmızımtıl, ağımsoy, açıq-qırmızı. 3. Çoxaltma dərəcəsi - əlamətin adi haldan çox olduğunu bildirir: tünd-qırmızı, qıpqırmızı və s."
-      },
-      {
-        "title": "Say: Növləri və yazılışı",
-        "description": "Miqdar, sıra, kəsr sayları və yazılış qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Ümumi qrammatik mənasına görə əşyanın miqdarını və ya sırasını bildirir. Say neçə?, nə qədər?, neçənci? suallarından birinə cavab verir. Say da sifət kimi isimlə bağlı olur. Sayın mənaca növləri: 1) Miqdar sayları - sualları: neçə?, nə qədər? Növləri: müəyyən miqdar sayları, qeyri-müəyyən miqdar sayları, kəsr sayları. 2) Sıra sayları - əşyanın sırasını bildirir, neçənci? sualına cavab verir: birinci(yer), beşinci(sıra). Müəyyən miqdar saylarına -ıncı4 şəkilçisini artırmaqla düzəlir."
-      },
-      {
-        "title": "Əvəzlik növləri",
-        "description": "Şəxs, işarə, sual, qeyri-müəyyən əvəzliklər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "İsim, sifət, say və digər nitq hissələrinin yerində işlənən sözlərdir. Mənaca növləri: 1) Şəxs əvəzlikləri: mən, sən, o, biz, siz, onlar. 2) Qeyri-müəyyən əvəzliklər: biri, kimi, kimsə, nə isə, hamı, bəzi, hər. 3) İnkar əvəzlikləri. 4) İşarə əvəzlikləri: o, bu, elə, belə, həmin. 5) Sual əvəzlikləri: kim?, nə?, hara?, necə?, nə cür?, hansı?, nə zaman?, nə vaxt?, haçan?, nə edir? 6) Təyini əvəzliklər: öz, bütün, hər, filan."
-      },
-      {
-        "title": "Feil: Zamanlar və şəkillər",
-        "description": "İndiki, keçmiş, gələcək zaman; xəbər, əmr, arzu şəkilləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Ümumi qrammatik mənasına görə hərəkət bildirir. Sualları: nə etdi?, nə edir?, nə edəcək?... Feilin üç zamanı var: keçmiş, indiki, gələcək. 1) Keçmiş zaman: a) Şühudi keçmiş. Şəkilçisi: -dı4: yaz+dı, oxu+du, bil+di. b) Nəqli keçmiş. Şəkilçisi: -mış4, -ıb4: yaz+mış+ıq, al+ıb+dır. 2) İndiki zaman. Şəkilçisi: -ır4: bax+ır, oxu+yur. 3) Gələcək zaman: a) Qəti gələcək. Şəkilçisi: -acaq2: yaz+acaq, əl+əcək. b) Qeyri-qəti gələcək. Şəkilçisi: -ar2: yaz+ar, oxu+yar."
-      },
-      {
-        "title": "Feilin qrammatik məna növləri",
-        "description": "Məlum, məchul, şəxssiz, qayıdış, icbar növlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Feilin qrammatik məna növləri işi görən ilə üzərində iş icra olunan əşya arasındakı qarşılıqlı münasibəti əks etdirir. Növləri: 1) Məlum növ - iş görən məlum olur: bax, gör. 2) Məchul növ - iş görən qrammatik cəhətdən məlum olmur. Şəkilçiləri: -ıl4, -ın4, -n: yaz+ıl+dı. 3) Qayıdış növ - iş görənin işi öz üzərində icra etdiyi bildirilir. Şəkilçiləri: -ıl4, -ın4, -n: aç+ıl+dı, çək+il+di, dara+n+dı. 4) Qarşılıq növ - hərəkətin qarşı-qarşıya icra edildiyi bildirilir. Şəkilçiləri: -ış4(-ş): vur+uş(maq), gör+üş(mək). 5) İcbar növ - hərəkəti danışan və ya haqqında danışılan şəxs deyil, başqası icra edir. Şəkilçiləri: -dır4, -t: sil+dir(mək), yaz+dır(maq), oxu+t(maq)."
-      },
-      {
-        "title": "Feilin təsriflənməyən formaları",
-        "description": "Məsdər, feili sifət, feili bağlama.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Feilin şəxsə və kəmiyyətə görə dəyişməyən formaları üçdür: məsdər, feili sifət, feili bağlama. 1) Məsdər - həm feilin, həm də ismin xüsusiyyətlərini daşıyır. Şəkilçisi: -maq2: ağla+maq, gül+mək. 2) Feili sifət - həm feilin, həm də sifətin xüsusiyyətlərini daşıyır. Şəkilçiləri: Keçmiş: -mış4, -dığı4; İndiki: -an2; Gələcək: -acaq2, -ası2, -malı2. 3) Feili bağlama - həm feilin, həm də zərfin xüsusiyyətlərini daşıyır. Şəkilçiləri: -ıb4, -araq2, -a2, -madan2, -anda2, -dıqda4, -arkən2, -ınca4, -dıqca4, -ar, -maz2."
-      },
-      {
-        "title": "Zərf: Növləri və işlənməsi",
-        "description": "Tərzi-hərəkət, zaman, yer, kəmiyyət zərfləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Hərəkətin tərzini, zamanını, yerini, miqdarını və s. bildirir və felə aid olur. Sualları: necə?(nə cür?), nə zaman?(haçan?), nə vaxt?, hara?, nə qədər?, nə üçün?, niyə? və s. Mənaca növləri: 1) Tərzi-hərəkət zərfləri - hərəkətin icra tərzini bildirir: birdən, asta, cəld, qaçaraq. 2) Zaman zərfləri - hərəkətin icra olunduğu zamanı bildirir: dünən, sabah, sonra, əvvəl. 3) Yer zərfləri - hərəkətin icra olunduğu yeri bildirir: irəli, geri, yuxarı, aşağı, sağa, sola, içəri, bəri. 4) Miqdar zərfləri - hərəkətin miqdarını və ya dərəcəsini bildirir: az, çox, xeyli."
-      },
-      {
-        "title": "Köməkçi nitq hissələri",
-        "description": "Qoşma, bağlayıcı, ədat, modal söz, nida.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Köməkçi nitq hissələrinin əsas xüsusiyyətləri: 1) leksik mənaya malik olmur; 2) ayrıla cümlə üzvü kimi işlənə bilmir və müstəqil suala cavab vermir. Köməkçi nitq hissələri: qoşma, bağlayıcı, ədat, modal sözlər, nida. Qoşma - ismin adlıq, yiyəlik, yönlük və çıxışlıq halında olan sözlərə qoşularaq müəyyən məna çaları əmələ gətirir. Bağlayıcı - sözlər, cümlə üzvləri və ya cümlələr arasında əlaqə yaradır. Ədat - sözlərin və cümlələrin təsir gücünü artırır, mənasını qüvvətləndirir. Modal söz - danışanın ifadə etdiyi fikrə münasibətini bildirir. Nida - danışanın hissini, həyəcanını, qorxu və ya sevincini bildirir."
-      },
-      {
-        "title": "Nitq hissələrinin omonimliyi",
-        "description": "Əsas və köməkçi nitq hissələrinin omonimliyi.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Əsas və köməkçi nitq hissələrinin omonimliyi. Köməkçi nitq hissələrinin bir-biri ilə omonimliyi. Köməkçi nitq hissələrinin sinonimliyi. Bəzi bağlayıcı və ədatların müəyyən şəkilçilərdən fərqləndirilməsi."
-      }
-    ],
-    "sintaksis": [
-      {
-        "title": "Söz birləşmələri",
-        "description": "İsmi və feili birləşmələr, əsas və asılı tərəflər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Söz birləşməsi iki və daha artıq müstəqil sözün məna və qrammatik cəhətdən birləşməsidir: daş hasar. Müstəqil sözlə köməkçi söz, söz birləşməsi yaratmır: evə tərəf. Söz birləşmələrinin əsas və asılı tərəfləri var. Əsas tərəfə görə söz birləşmələrinin növləri: ismi və feili birləşmələr. İsmi birləşmələr - əsas tərəfi isimlərlə(adlarla) ifadə olunan birləşmələrdir. Feili birləşmələr - əsas tərəfi feilin təsriflənməyən formaları ilə ifadə olunur."
-      },
-      {
-        "title": "Mürəkkəb adlar",
-        "description": "Mürəkkəb adların yazılış qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Mürəkkəb adların xüsusi isimlərdən fərqi ondadır ki, xüsusi isimlər ayrı-ayrı sözlərdən, mürəkkəb adlar isə söz birləşmələrindən ibarət olur. Mürəkkəb adlara daxildir: 1) idarə və təşkilatların adları; 2) respublika bayramlarının adları; 3) dövlət təltiflərinin adları; 4) coğrafi adlar. Mürəkkəb adların yazılışında üç qayda var: 1) Bütün sözlərin baş hərfi böyük yazılır; 2) Yalnız birinci sözün baş hərfi böyük yazılır; 3) Fəxri adların bütün sözləri kiçik hərflə yazılır."
-      },
-      {
-        "title": "Sintaktik əlaqələr",
-        "description": "Tabesizlik, tabelilik, uzlaşma əlaqələri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sintaktik əlaqələr iki cür olur: tabesizlik və tabelilik. Tabesizlik əlaqəsi: 1) Tərəflər bərabərhüquqlu olur; 2) Həmcins üzvlər arasında olur; 3) Tabesiz mürəkkəb cümlənin tərkib hissələri arasında olur. Tabelilik əlaqəsinin üç növü var: yanışma, idarə, uzlaşma. Əsas və asılı tərəflərdən ibarətdir. 1) Yanışma əlaqəsi - asılı tərəfin heç bir qrammatik şəkilçi qəbul etmədən əsas tərəfə yanaşıb, mənaca ona bağlanmasına yanışma deyilir. 2) İdarə əlaqəsi - əsas tərəfin tələbi ilə asılı tərəfin müəyyən hallara düşməsinə idarə deyilir. 3) Uzlaşma əlaqəsi - asılı tərəfin əsas tərəflə şəxsə və kəmiyyətə görə uyğunlaşmasına uzlaşma deyilir."
-      },
-      {
-        "title": "Cümlənin baş üzvləri",
-        "description": "Mübtəda və xəbər, ifadə vasitələri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Cümlənin baş üzvləri: 1) Mübtəda - cümlənin baş üzvü olub hərəkət və əlaməti xəbərlə müəyyənəşən şəxsi, əşyanı bildirir. İsmin adlıq halında olur. Fikir mənbəyidir və haqqında danışılanı bildirir. Kim?, nə?, bəzən də hara? sualına cavab verir. 2) Xəbər - cümlənin baş üzvü olub, haqqında danışılanın hərəkət və ya əlamətini bildirir. İki cür olur: feli və ismi xəbər. Feli xəbər - nə etdi?, nə edir?, nə edəcək? suallarından birinə cavab verir. İsmi xəbər - kimdir?, nədir?, neçədir?, haradadır?, necədir? suallarından birinə cavab verir."
-      },
-      {
-        "title": "Cümlənin ikincidərəcəli üzvləri",
-        "description": "Tamamlıq, təyin, zərflik növləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Cümlənin ikincidərəcəli üzvləri: 1) Tamamlıq - cümlənin ikincidərəcəli üzvü olub, hərəkətin obyektini bildirir. İsmin adlıq, yiyəlik hallarından başqa digər hallarda olur. 2) Təyin - cümlənin ikincidərəcəli üzvü olub, isimlə və isimləşmiş sözlərlə ifadə olunan üzvləri müxtəlif cəhətdən izah edir. Necə?, nə cür?, hansı?, neçə?, nə qədər?, neçənci? suallarından birinə cavab verir. 3) Zərflik - cümlənin ikincidərəcəli üzvü olub, hərəkətin icrasını və ya əlamətin meydana çıxmasını müxtəlif cəhətdən izah edir. Mənaca növləri: tərzi-hərəkət, zaman, yer, kəmiyyət, səbəb, məqsəd."
-      },
-      {
-        "title": "Həmcins üzvlər",
-        "description": "Həmcinslik, ümumiləşdirici sözlər, durğu işarələri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Həmcins üzvlər eyni üzvlə bağlı olub, eyni suala cavab verən bərabərhüquqlu üzvlərdir. Həmcins üzvlər arasında tabesizlik əlaqəsi olur. Bütün cümlə üzvləri həmcins ola bilər. Həmcins üzvlər bir-birindən vergüllə ayrılır. Həmcins üzvlər arasında və, ilə bağlayıcıları işləndikdə vergül qoyulmur. Ümumiləşdirici sözlər - həmcins üzvlərin hamısına aid olan və onları ümumiləşdirən cümlə üzvüdür. Ümumiləşdirici söz həmcins üzvlərdən əvvəl gələrsə, ondan sonra iki nöqtə qoyulur; həmcins üzvlərdən sonra gələrsə, ondan əvvəl tire qoyulur."
-      },
-      {
-        "title": "Cümlədə söz sırası və əlavələr",
-        "description": "Söz sırası qaydaları, əlavələr, ara sözlər, xitab.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Cümlədə söz sırası: əvvəlcə mübtəda, sonra tamamlıq, daha sonra xəbər gəlir; təyin təyin olunan cümlə üzvünün önündə işlənir; zərflik, əsasən, xəbərdən əvvələ düşür. Əlavələr - cümlədə özündən əvvəlki üzvün mənasını izah edib konkretləşdirir. Əlavə aid olduğu üzvdən sonra gəlir, ondan xüsusi intonasiya və fasilə ilə ayrılır. Ara sözləri - danışanın ifadə etdiyi fikrə münasibətini bildirir və cümlədəki başqa sözlərdən fasilə ilə ayrılır. Xitab - cümlədə müraciət ediləni bildirən söz və ya söz birləşməsidir. Xitab xüsusi intonasiya və fasilə ilə ayrılır."
-      },
-      {
-        "title": "Cümlə növləri",
-        "description": "Məqsəd, intonasiya, quruluşca növlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Cümlənin məqsəd və intonasiyaya görə dörd növü var: 1) Nəqli cümlə - bir iş, hadisə, əlamət haqqında məlumat verən adi təsviri cümlələrdir. 2) Sual cümləsi - sual məqsədi ilə işlədilən cümlələrdir. 3) Əmr cümləsi - təkid, tələb, məsləhət, nəsihət və s. ifadə edən cümlələrdir. 4) Nida cümləsi - yüksək hiss və həyəcanla tələffüz edilən cümlələrdir. Baş üzvlərin iştirakına görə sadə cümlənin növləri: müəyyən şəxsli, qeyri-müəyyən şəxsli, ümumi şəxsli, şəxssiz, adlıq cümlələr."
-      },
-      {
-        "title": "Mürəkkəb cümlələr",
-        "description": "Tabesiz və tabeli mürəkkəb cümlələr, baş-budaq əlaqəsi.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Mürəkkəb cümlələr iki yerə bölünür: tabesiz və tabeli. Tabesiz mürəkkəb cümlələr - bərabərhüquqlu sadə cümlələrin birləşməsindən yaranır. Tabeli mürəkkəb cümlələr - tərkib hissələrindən biri qrammatik cəhətdən müstəqil, digəri ondan asılı olur. Müstəqil hissəyə baş cümlə, baş cümlədən asılı olan, onu izah edib aydınlaşdıran hissəyə budaq cümlə deyilir. Budaq cümlələrin növləri: mübtəda, xəbər, tamamlıq, təyin, zərflik, şərt, qarşılaşdırma budaq cümlələri."
-      },
-      {
-        "title": "Vasitəsiz və vasitəli nitq",
-        "description": "Dialoqlar, durğu işarələri, nitq növləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Vasitəsiz nitq - başqasının eynilə işlətdiyimiz sözləri vasitəsiz nitq adlanır. Bu cür cümlələr iki hissədən - müəllifin sözlərindən və vasitəsiz nitqdən ibarət olur. Yazıda vasitəsiz nitqi fərqləndirmək üçün dırnaq işarəsindən və ya tiredən istifadə edilir. Vasitəli nitq - başqasının nitqinin dəyişilmiş şəkildə verilməsi vasitəli nitq adlanır. Vasitəsiz nitq vasitəli nitqə çevrilərkən ki bağlayıcısından istifadə olunur, dırnaqlar və tire atılır."
-      }
-    ],
-    "durgu_isareleri": [
-      {
-        "title": "Nöqtə, sual, nida işarələri",
-        "description": "Bu işarələrin işlənmə qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Nöqtə - nəqli cümlələrin sonunda qoyulur. Sual işarəsi - sual cümlələrinin sonunda qoyulur. Nida işarəsi - nida cümlələrinin sonunda, həmçinin nidalardan sonra qoyulur."
-      },
-      {
-        "title": "Vergülün işlənməsi",
-        "description": "Vergülün cümlədə işlənmə halları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Vergül: 1) həmcins üzvlər arasında; 2) mürəkkəb cümlələrin tərkib hissələri arasında; 3) xitablardan sonra; 4) ara sözlərdən əvvəl və sonra; 5) vasitəsiz nitqdə; 6) modal sözlərdən sonra; 7) bağlayıcılardan əvvəl və sonra müəyyən hallarda."
-      },
-      {
-        "title": "Üç nöqtə, qoşa nöqtə, dırnaqlar",
-        "description": "Bu işarələrin funksiyası və işlənməsi.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Üç nöqtə - natamam cümlələrdə, fikrin davamını bildirmək üçün; qoşa nöqtə - ümumiləşdirici sözlərdən sonra, vasitəsiz nitqdən əvvəl; dırnaqlar - vasitəsiz nitqi, məcazi mənaları, xüsusi adları, əsər adlarını göstərmək üçün."
-      },
-      {
-        "title": "Tirənin işlənməsi",
-        "description": "Tirənin cümlədə işlənmə qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Tirə: 1) ümumiləşdirici sözlərdən əvvəl; 2) əlavələrdən əvvəl; 3) vasitəsiz nitqdə müəllif sözləri arasında; 4) dialoqlarda; 5) mübtəda və xəbər arasında müəyyən hallarda."
-      }
-    ],
-    "uslub": [
-      {
-        "title": "Funksional üslublar",
-        "description": "Bədii, elmi, publisistik, rəsmi-işgüzar, məişət üslubları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Azərbaycan ədəbi dilinin üslubları: 1) Bədii üslub - milli bədii təfəkkürün ifadəsidir. Əsas xüsusiyyətləri: obrazlılıq, emosionallıq. 2) Elmi üslub - elmi təfəkkürün ifadəsi olub, bu və ya digər elm sahəsinin dilidir. Əsas xüsusiyyətləri: məntiqilik, ardıcıllıq, konkretlik. 3) Publisistik üslub - milli ictimai təfəkkürü ifadə edən nitq forması olub, mətbuatda funksionallaşır. Əsas xüsusiyyətləri: aydınlıq, kütləvi anlaşılıqlılıq, təsirlilik. 4) Məişət üslubu - insanların məişətdəki danışiq tərzini əhatə edir. Əsas xüsusiyyətləri: təbiiilik, sərbəstlik və adi, sadə danışiq dili. 5) Rəsmi-işgüzar üslub - rəsmi və işgüzar sənədlərin dil təzahürüdür. Əsas xüsusiyyətləri: standart formalar və olduqca yığcamlıq."
-      },
-      {
-        "title": "Bədii üslub",
-        "description": "Obrazlı nitq, bədii təsvir vasitələri, ellipsis.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Bədii üslubun xüsusiyyətləri: obrazlılıq, emosionallıq. Bədii təsvir və ifadə vasitələri: epitet, təşbeh, mübaliğə, istiarə, kinayə. Ellipsis - ixtisar. Sözün poetik funksiyası - bədii sözdür. Bədii söz, əsasən, məcazi mənada işlənmiş sözdür."
-      },
-      {
-        "title": "Elmi üslub",
-        "description": "İzah, şərh, nəticə, terminlərin işlənməsi.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Elmi üslubda ancaq bu üslub üçün xarakterik olan elə sözlər işlənir ki, onlara termin deyilir. Hər elmin özünəməxsus terminləri var. Elmi üslubda mürəkkəb cümlələr, modallıq bildirən söz və ifadələr çox işlənir. Elmi üslubda fikri daha yığcam, daha konkret ifadə etmək üçün müxtəlif qrafik vasitələrdən(rəqəm, diaqram, düstur və s.) istifadə olunur."
-      },
-      {
-        "title": "Publisistik üslub",
-        "description": "Yazılı və şifahi forma, xüsusiyyətlər.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Publisistik üslubun iki forması var: 1) Yazılı forması - qəzetlərin, kütləvi jurnalların, elmi-kütləvi kitabların dili. 2) Şifahi forması - radio dili, televiziyа dili, eləcə də kütləvi yığıncaqlarda, mitinqlərdə səslənən dil. Publisistik üslub çox müxtəlif emosiyaları ifadə edir."
-      },
-      {
-        "title": "Sözün üslubi funksiyaları",
-        "description": "İnformativ və poetik funksiya fərqləri.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Sözün üslubi funksiyaları: 1) İnformativ funksiya - məlumat vermək; 2) Poetik funksiya - bədii təsir yaratmaq; 3) Terminoloji funksiya - elmi anlayışları ifadə etmək. Mətndə bilavasitə poetik funksiya daşıyan söz, yaxud ifadə poezizmdir."
-      }
-    ],
-    "yazi_novleri": [
-      {
-        "title": "Xülasə yazmaq",
-        "description": "Xülasəyə verilən tələblər və qaydalar.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Xülasə - mətnin məzmununun qısa şəkildə şərhidir. Xülasəyə verilən tələblər: 1) mətnin əsas fikrini əks etdirməli; 2) qısa və aydın olmalı; 3) məntiqi ardıcıllıqla yazılmalı; 4) müəllifin öz sözləri ilə ifadə edilməli."
-      },
-      {
-        "title": "Tezis yazmaq",
-        "description": "Tezisin əsas xüsusiyyətləri və strukturu.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Tezis - müəyyən bir mövzu üzrə əsas müddəaları, fikirləri qısa şəkildə ifadə edən yazı növüdür. Tezisin əsas xüsusiyyətləri: 1) qısa və konkret olmalı; 2) əsas fikirləri əhatə etməli; 3) məntiqi ardıcıllıqla düzülməli; 4) sübutlara əsaslanmalı."
-      },
-      {
-        "title": "Plan tərtib etmək",
-        "description": "Mətnin hissələrinə görə plan qurma qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Plan - mətnin hissələrinin ardıcıllığını göstərən sxemdir. Plan tərtib etmək qaydaları: 1) mətni diqqətlə oxumaq; 2) əsas hissələri müəyyən etmək; 3) hər hissəyə uyğun başlıq seçmək; 4) ardıcıllığı gözləmək; 5) qısa və aydın ifadələrdən istifadə etmək."
-      },
-      {
-        "title": "Rabitəli yazı",
-        "description": "Mövzuya uyğun mətn hazırlama bacarığı.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Rabitəli yazı - mövzuya uyğun, məntiqi ardıcıllıqla, dil qaydalarına əməl etməklə mətn hazırlamaqdır. Tələblər: 1) mövzuya uyğunluq; 2) məntiqi ardıcıllıq; 3) dil qaydalarına əməl; 4) üslubi təmizlik; 5) fikrin tam ifadəsi."
-      }
-    ],
-    "dil_normalari": [
-      {
-        "title": "Fonetik norma",
-        "description": "Tələffüz qaydaları və ədəbi dil normaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Fonetik norma - sözün ədəbi dildəki yazılış qaydası orfoqrafik norma, tələffüz qaydası isə orfoepik norma adlanır. Fonetik normada dəyişmə gec olur. Orfoepik və orfoqrafik normanın pozulması fonetik normanın pozulması deməkdir."
-      },
-      {
-        "title": "Leksik norma",
-        "description": "Söz işlətmə qaydaları və məna uyğunluğu.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Leksik norma hər bir şəxsdən sözün mənasına bələd olmağı, onu düzgün, yerində işlətməyi tələb edir. Leksik(leksik-semantik) normanın keyfiyyətini milli leksika müəyyən edir. Alınma sözlərin forma və məzmunca milliləşməsi həmin leksik mühitdə gedir."
-      },
-      {
-        "title": "Qrammatik norma",
-        "description": "Cümlə quruluşu və nitq qaydaları.",
-        "link": "#",
-        "type": "link",
-        "qayda": "Qrammatik norma sözlərin düzgün əlaqələndirilməsidir: 1) Miqdar saylarından sonra gələn isimlər təkdə işlədilir; 2) Adlara kəmiyyət, mənsubiyyət, hal, xəbər kategoriyasının əlaməti(şəkilçisi) ardıcıl artırılır; 3) Fel kökünə təsirlilik, növ, şəkil, şəxs-xəbər əlaməti(şəkilçisi) ardıcıl artırılır; 4) Mübtəda ilə xəbər cümlədə şəxsə, müəyyən dərəcədə isə kəmiyyətə görə uzlaşır; 5) Cümlədə əvvəl mübtəda, sonra tamamlıq, daha sonra xəbər gəlir."
-      }
-    ]
+    }
   },
-  "ingilis": {
-    "grammar": [],
-    "vocabulary": [],
-    "reading_writing": []
-  },
-  "riyaziyyat": {
-    "cebr": [],
-    "hendese": [],
-    "trigonometriya": [],
-    "funksiyalar": []
+  "meta": {
+    "version": "1.0",
+    "created": "2026-03-01",
+    "source": "Azərbaycan Respublikası Təhsil Nazirliyi, Dövlət İmtahan Mərkəzi",
+    "grade_levels": ["5", "6", "7", "8", "9", "10", "11"],
+    "exam_type": "Buraxılış imtahanı (Tam orta təhsil)"
   }
 }
